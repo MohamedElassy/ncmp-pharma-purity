@@ -5,8 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pharma & Nutraceuticals Products | NCMP Egypt</title>
   <meta name="description" content="NCMP pharmaceutical grade corn-derived excipients: Sorbitol, Citric Acid, Maltitol, Corn Starch. USP/NF, EP, BP compliant. ISO 9001 & GMP certified Egyptian manufacturer.">
+  <meta name="keywords" content="pharmaceutical sorbitol, citric acid pharma grade, maltitol pharmaceutical, corn starch medical, pharma excipients, pharmaceutical ingredients Egypt">
+  <meta name="author" content="National Company for Maize Products (NCMP)">
+  <meta property="og:title" content="NCMP Pharma Grade - Pharmaceutical Excellence">
+  <meta property="og:description" content="Strategic entry into pharmaceutical ingredients with 40+ years of manufacturing expertise">
+  <meta property="og:type" content="website">
   <link rel="canonical" href="https://www.ncmp.com.eg/products">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "NCMP Pharma Grade",
+    "url": "https://www.ncmp.com.eg/pharma",
+    "logo": "https://www.ncmp.com.eg/images/logo2.gif",
+    "description": "NCMP's strategic division for pharmaceutical-grade ingredients",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "National Company for Maize Products (NCMP)"
+    }
+  }
+  </script>
+  
   <style>
     :root {
       --background: hsl(0, 0%, 100%);
@@ -20,6 +42,7 @@
       --muted: hsl(0, 0%, 96%);
       --muted-foreground: hsl(0, 0%, 45%);
       --accent: hsl(38, 92%, 55%);
+      --accent-foreground: hsl(0, 0%, 20%);
       --border: hsl(0, 0%, 90%);
       --pharma-blue: hsl(200, 60%, 50%);
       --pharma-blue-light: hsl(200, 50%, 97%);
@@ -34,17 +57,26 @@
       border-color: var(--border);
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Open Sans', Arial, sans-serif;
       background: var(--background);
       color: var(--foreground);
       -webkit-font-smoothing: antialiased;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     a {
       text-decoration: none;
       color: inherit;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--primary);
     }
 
     /* Container */
@@ -118,6 +150,7 @@
       background: rgba(255,255,255,0.98);
       backdrop-filter: blur(8px);
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      border-bottom: 3px solid var(--primary);
     }
 
     .main-nav .container {
@@ -154,11 +187,13 @@
       font-size: 14px;
       font-weight: 500;
       color: var(--foreground);
-      transition: color 0.2s;
+      transition: all 0.3s ease;
+      border-radius: 4px;
     }
 
     .nav-link:hover {
       color: var(--primary);
+      background-color: hsl(148, 70%, 95%);
     }
 
     /* Industry Tabs Bar */
@@ -174,7 +209,7 @@
     }
 
     @media (min-width: 1024px) {
-      .industry-tabs-bar { top: 104px; }
+      .industry-tabs-bar { top: 107px; }
     }
 
     .industry-tabs {
@@ -248,7 +283,7 @@
     }
 
     @media (min-width: 1024px) {
-      .hero { padding-top: 152px; }
+      .hero { padding-top: 155px; }
     }
 
     .hero-banner {
@@ -269,10 +304,22 @@
       position: absolute;
       inset: 0;
       background: linear-gradient(135deg, 
-        hsla(150, 100%, 20%, 0.85) 0%,
-        hsla(148, 70%, 32%, 0.7) 50%,
+        hsla(150, 100%, 20%, 0.9) 0%,
+        hsla(148, 70%, 32%, 0.75) 50%,
         transparent 100%
       );
+    }
+
+    .hero-overlay::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
     }
 
     .hero-content {
@@ -343,13 +390,34 @@
       font-size: 18px;
       color: rgba(255,255,255,0.9);
       margin-bottom: 24px;
-      line-height: 1.6;
+      line-height: 1.8;
     }
 
     .hero-buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      font-size: 14px;
+      font-weight: 600;
+      background: var(--accent);
+      color: var(--accent-foreground);
+      border-radius: 6px;
+      border: 2px solid var(--accent);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--accent);
     }
 
     .btn-pharma {
@@ -432,6 +500,157 @@
 
     @media (min-width: 1024px) {
       .stat-label { font-size: 14px; }
+    }
+
+    /* ============================================
+       WHY NCMP PHARMA GRADE SECTION
+    ============================================ */
+    .strategic-section {
+      background: linear-gradient(to right, hsl(148, 40%, 97%) 0%, hsl(0, 0%, 100%) 50%, hsl(148, 40%, 97%) 100%);
+      padding: 64px 0;
+      border-top: 3px solid var(--primary);
+      border-bottom: 3px solid var(--pharma-blue);
+    }
+
+    .strategic-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+
+    @media (min-width: 640px) {
+      .strategic-section h2 { font-size: 2.25rem; }
+    }
+
+    .strategic-section > .container > p {
+      text-align: center;
+      color: var(--muted-foreground);
+      max-width: 700px;
+      margin: 0 auto 40px auto;
+      font-size: 16px;
+    }
+
+    .strategic-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 640px) {
+      .strategic-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 1024px) {
+      .strategic-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .strategic-item {
+      background: var(--card);
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 102, 51, 0.1);
+      border-left: 4px solid var(--pharma-blue);
+      transition: all 0.3s ease;
+    }
+
+    .strategic-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 102, 51, 0.15);
+    }
+
+    .strategic-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--pharma-blue) 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .strategic-icon svg {
+      width: 24px;
+      height: 24px;
+      color: white;
+    }
+
+    .strategic-item h4 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .strategic-item p {
+      font-size: 14px;
+      color: var(--muted-foreground);
+      line-height: 1.6;
+    }
+
+    /* ============================================
+       QUALITY & CERTIFICATIONS SECTION
+    ============================================ */
+    .quality-section {
+      background: var(--pharma-blue-light);
+      padding: 64px 0;
+      border-top: 3px solid var(--primary);
+    }
+
+    .quality-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+
+    .quality-section > .container > p {
+      text-align: center;
+      color: var(--muted-foreground);
+      margin-bottom: 40px;
+    }
+
+    .certifications-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    @media (min-width: 640px) {
+      .certifications-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (min-width: 1024px) {
+      .certifications-grid { grid-template-columns: repeat(6, 1fr); }
+    }
+
+    .cert-badge {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--pharma-blue) 100%);
+      color: white;
+      padding: 24px 16px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 102, 51, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .cert-badge:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 102, 51, 0.3);
+    }
+
+    .cert-badge-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .cert-badge-subtitle {
+      font-size: 12px;
+      opacity: 0.9;
     }
 
     /* Breadcrumb Bar */
@@ -622,7 +841,7 @@
       margin-left: 8px;
     }
 
-    .applications-section {
+    .applications-section-card {
       margin-bottom: 16px;
     }
 
@@ -752,10 +971,164 @@
       font-size: 14px;
     }
 
+    /* ============================================
+       APPLICATIONS SECTION
+    ============================================ */
+    .applications-section {
+      background: var(--background);
+      padding: 64px 0;
+    }
+
+    .applications-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 40px;
+    }
+
+    .applications-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 640px) {
+      .applications-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 1024px) {
+      .applications-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .application-item {
+      background: hsl(148, 40%, 97%);
+      padding: 24px;
+      border-radius: 8px;
+      border-left: 4px solid var(--pharma-blue);
+      transition: all 0.3s ease;
+    }
+
+    .application-item:hover {
+      box-shadow: 0 6px 12px rgba(0, 102, 51, 0.12);
+      transform: translateY(-2px);
+    }
+
+    .application-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--pharma-blue) 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .application-icon svg {
+      width: 24px;
+      height: 24px;
+      color: white;
+    }
+
+    .application-item h4 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .application-item p {
+      font-size: 14px;
+      color: var(--muted-foreground);
+      line-height: 1.6;
+    }
+
+    /* ============================================
+       CTA SECTION
+    ============================================ */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--pharma-blue) 100%);
+      color: white;
+      text-align: center;
+      padding: 64px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .cta-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .cta-section p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 32px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-cta-primary {
+      background: var(--accent);
+      color: var(--accent-foreground);
+      padding: 14px 32px;
+      border-radius: 6px;
+      font-weight: 700;
+      border: 2px solid var(--accent);
+      cursor: pointer;
+      transition: all 0.3s;
+      font-size: 1rem;
+    }
+
+    .btn-cta-primary:hover {
+      background: transparent;
+      color: var(--accent);
+    }
+
+    .btn-cta-secondary {
+      background: transparent;
+      color: white;
+      padding: 14px 32px;
+      border-radius: 6px;
+      font-weight: 700;
+      border: 2px solid white;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-size: 1rem;
+    }
+
+    .btn-cta-secondary:hover {
+      background: white;
+      color: var(--primary);
+    }
+
     /* Footer */
     footer {
-      background: var(--secondary);
+      background: hsl(150, 100%, 15%);
       color: var(--secondary-foreground);
+      border-top: 3px solid var(--primary);
     }
 
     .footer-content {
@@ -788,6 +1161,7 @@
     .footer-title {
       font-weight: 700;
       margin-bottom: 16px;
+      color: var(--corn-gold-light);
     }
 
     .footer-links {
@@ -808,7 +1182,7 @@
     }
 
     .footer-links a:hover {
-      color: white;
+      color: var(--corn-gold-light);
     }
 
     .footer-contact {
@@ -826,7 +1200,7 @@
     }
 
     .contact-item a:hover {
-      color: white;
+      color: var(--corn-gold-light);
     }
 
     .footer-bottom {
@@ -857,6 +1231,28 @@
     .icon-xl {
       width: 28px;
       height: 28px;
+    }
+
+    /* Accessibility */
+    button:focus,
+    a:focus {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    @media print {
+      .top-bar,
+      .main-nav,
+      .industry-tabs-bar,
+      .cta-section,
+      footer {
+        display: none;
+      }
+
+      body {
+        background-color: white;
+        color: black;
+      }
     }
   </style>
 </head>
@@ -941,24 +1337,24 @@
                   <path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/>
                   <path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/>
                 </svg>
-                New Sector
+                Strategic Entry into Pharmaceuticals
               </span>
-              <span class="hero-certs">ISO 9001 • GMP • HACCP</span>
             </div>
+            <p class="hero-certs">ISO 9001 • GMP • HACCP Certified</p>
             
             <h1>
-              Pharma & Nutraceuticals
-              <span>Grade Ingredients</span>
+              Pharmaceutical Excellence
+              <span>from Nature</span>
             </h1>
             
             <p>
-              NCMP enters the pharmaceutical sector with premium corn-derived excipients 
-              that meet the most stringent international pharmacopoeial standards (USP/NF, EP, BP).
+              Leveraging 40+ years of manufacturing expertise to deliver pharmaceutical-grade ingredients 
+              that meet the world's highest standards. NCMP Pharma Grade: Your trusted partner in pharmaceutical innovation.
             </p>
             
             <div class="hero-buttons">
-              <a href="#products" class="btn-pharma">
-                Explore Pharma Products
+              <a href="#products" class="btn-primary">
+                Explore Our Portfolio
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="m9 18 6-6-6-6"/>
                 </svg>
@@ -977,15 +1373,15 @@
           <div class="stats-grid">
             <div>
               <div class="stat-value">40+</div>
-              <div class="stat-label">Years Experience</div>
+              <div class="stat-label">Years Manufacturing Excellence</div>
             </div>
             <div>
               <div class="stat-value">100%</div>
               <div class="stat-label">Egyptian Corn</div>
             </div>
             <div>
-              <div class="stat-value">ISO</div>
-              <div class="stat-label">9001:2015 Certified</div>
+              <div class="stat-value">USP/EP</div>
+              <div class="stat-label">Pharmacopeial Grade</div>
             </div>
             <div>
               <div class="stat-value">GMP</div>
@@ -996,6 +1392,100 @@
       </div>
     </div>
   </header>
+
+  <!-- Why NCMP Pharma Grade Section -->
+  <section class="strategic-section">
+    <div class="container">
+      <h2>Why NCMP Pharma Grade?</h2>
+      <p>Strategic positioning in the pharmaceutical industry with decades of manufacturing excellence and commitment to quality.</p>
+      
+      <div class="strategic-grid">
+        <div class="strategic-item">
+          <div class="strategic-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h4>40+ Years of Expertise</h4>
+          <p>Decades of manufacturing excellence applied to pharmaceutical-grade standards and regulatory requirements.</p>
+        </div>
+        
+        <div class="strategic-item">
+          <div class="strategic-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h4>Regulatory Compliance</h4>
+          <p>Full commitment to USP, EP, BP, GMP, and FDA standards. Complete regulatory support and documentation.</p>
+        </div>
+        
+        <div class="strategic-item">
+          <div class="strategic-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 18h8"/>
+              <path d="M3 22h18"/>
+              <path d="M14 22a7 7 0 1 0 0-14h-1"/>
+              <path d="M9 14h2"/>
+              <path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/>
+              <path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/>
+            </svg>
+          </div>
+          <h4>Pharmaceutical Purity</h4>
+          <p>Rigorous quality control ensures pharmaceutical-grade purity (≥99.0%) in every batch we produce.</p>
+        </div>
+        
+        <div class="strategic-item">
+          <div class="strategic-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h4>Dedicated Team</h4>
+          <p>Specialized pharmaceutical team committed to your success and regulatory compliance excellence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quality & Certifications Section -->
+  <section class="quality-section" id="certifications">
+    <div class="container">
+      <h2>Quality & Compliance Excellence</h2>
+      <p>NCMP Pharma Grade products meet the world's highest pharmaceutical standards</p>
+      
+      <div class="certifications-grid">
+        <div class="cert-badge">
+          <div class="cert-badge-title">USP</div>
+          <div class="cert-badge-subtitle">Pharmacopeial Grade</div>
+        </div>
+        <div class="cert-badge">
+          <div class="cert-badge-title">EP</div>
+          <div class="cert-badge-subtitle">European Standard</div>
+        </div>
+        <div class="cert-badge">
+          <div class="cert-badge-title">BP</div>
+          <div class="cert-badge-subtitle">British Pharmacopoeia</div>
+        </div>
+        <div class="cert-badge">
+          <div class="cert-badge-title">GMP</div>
+          <div class="cert-badge-subtitle">Manufacturing Practice</div>
+        </div>
+        <div class="cert-badge">
+          <div class="cert-badge-title">ISO 9001</div>
+          <div class="cert-badge-subtitle">Quality Management</div>
+        </div>
+        <div class="cert-badge">
+          <div class="cert-badge-title">HACCP</div>
+          <div class="cert-badge-subtitle">Food Safety</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Breadcrumb Bar -->
   <div class="breadcrumb-bar" id="products">
@@ -1030,10 +1520,10 @@
             <path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/>
             <path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/>
           </svg>
-          Pharma Grade Products
+          NCMP Pharma Grade Portfolio
         </h2>
         <p class="section-subtitle">
-          Pharmaceutical-grade ingredients meeting USP, BP, and EP standards for the pharmaceutical industry.
+          Pharmaceutical-grade ingredients meeting USP, BP, and EP standards for the global pharmaceutical industry.
         </p>
       </div>
 
@@ -1048,12 +1538,12 @@
             <div class="product-header">
               <div>
                 <span class="badge-pharma">Pharma Grade</span>
-                <h3 class="product-name">Sorbitol</h3>
-                <p class="product-subtitle">Pharmaceutical Grade - D-Glucitol</p>
+                <h3 class="product-name">Pharmaceutical Sorbitol</h3>
+                <p class="product-subtitle">D-Glucitol Solution 70%</p>
               </div>
             </div>
             <p class="product-description">
-              Sorbitol is a versatile product with wide pharmaceutical and medical applications. Used in cough syrups, laxatives, and pharmaceutical formulations. NCMP Sorbitol meets USP/NF and EP standards for pharmaceutical use.
+              Sorbitol is a versatile product with wide pharmaceutical and medical applications. Used in cough syrups, laxatives, and pharmaceutical formulations. NCMP Sorbitol meets USP/NF and EP standards for pharmaceutical use with guaranteed purity ≥92%.
             </p>
             <div class="product-meta">
               <div>
@@ -1065,8 +1555,8 @@
                 <span class="meta-value">291kg drums or 500kg-35000kg Bulk</span>
               </div>
             </div>
-            <div class="applications-section">
-              <h4 class="applications-title">Applications:</h4>
+            <div class="applications-section-card">
+              <h4 class="applications-title">Pharmaceutical Applications:</h4>
               <div class="applications-list">
                 <span class="application-tag">Cough syrups and oral liquids</span>
                 <span class="application-tag">Tablet coating and excipient</span>
@@ -1170,7 +1660,7 @@
               </div>
             </div>
             <p class="product-description">
-              Ultra-pure anhydrous citric acid for pharmaceutical applications. Essential for pH adjustment, buffering systems, and as a chelating agent in pharmaceutical preparations.
+              Ultra-pure anhydrous citric acid for pharmaceutical applications. Essential for pH adjustment, buffering systems, and as a chelating agent in pharmaceutical preparations. Assay: 99.5 - 100.5%.
             </p>
             <div class="product-meta">
               <div>
@@ -1182,8 +1672,8 @@
                 <span class="meta-value">25kg bags or bulk containers</span>
               </div>
             </div>
-            <div class="applications-section">
-              <h4 class="applications-title">Applications:</h4>
+            <div class="applications-section-card">
+              <h4 class="applications-title">Pharmaceutical Applications:</h4>
               <div class="applications-list">
                 <span class="application-tag">Buffer systems in formulations</span>
                 <span class="application-tag">Effervescent tablet formulations</span>
@@ -1266,7 +1756,7 @@
               </div>
             </div>
             <p class="product-description">
-              High-quality maltitol powder for sugar-free pharmaceutical preparations and nutraceuticals. Excellent taste profile with low glycemic response.
+              High-quality maltitol powder for sugar-free pharmaceutical preparations and nutraceuticals. Excellent taste profile with low glycemic response. Maltitol Content: Min. 98%.
             </p>
             <div class="product-meta">
               <div>
@@ -1278,8 +1768,8 @@
                 <span class="meta-value">25kg bags</span>
               </div>
             </div>
-            <div class="applications-section">
-              <h4 class="applications-title">Applications:</h4>
+            <div class="applications-section-card">
+              <h4 class="applications-title">Pharmaceutical Applications:</h4>
               <div class="applications-list">
                 <span class="application-tag">Chewable tablets</span>
                 <span class="application-tag">Sugar-free syrups</span>
@@ -1352,7 +1842,7 @@
               </div>
             </div>
             <p class="product-description">
-              Premium pharmaceutical-grade corn starch from select Egyptian maize. Critical excipient for tablet disintegration, binding, and medical applications.
+              Premium pharmaceutical-grade corn starch from select Egyptian maize. Critical excipient for tablet disintegration, binding, and medical applications. Loss on Drying: Max. 14%.
             </p>
             <div class="product-meta">
               <div>
@@ -1364,8 +1854,8 @@
                 <span class="meta-value">25kg bags or bulk</span>
               </div>
             </div>
-            <div class="applications-section">
-              <h4 class="applications-title">Applications:</h4>
+            <div class="applications-section-card">
+              <h4 class="applications-title">Pharmaceutical Applications:</h4>
               <div class="applications-list">
                 <span class="application-tag">Tablet disintegrant</span>
                 <span class="application-tag">Capsule filler</span>
@@ -1432,6 +1922,96 @@
     </div>
   </section>
 
+  <!-- Pharmaceutical Applications Section -->
+  <section class="applications-section">
+    <div class="container">
+      <h2>Pharmaceutical Applications</h2>
+      
+      <div class="applications-grid">
+        <div class="application-item">
+          <div class="application-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+            </svg>
+          </div>
+          <h4>Oral Solid Dosages</h4>
+          <p>Tablets and capsules with superior binders, disintegrants, and sweeteners for optimal performance and patient compliance.</p>
+        </div>
+        
+        <div class="application-item">
+          <div class="application-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 18h8"/>
+              <path d="M3 22h18"/>
+              <path d="M14 22a7 7 0 1 0 0-14h-1"/>
+              <path d="M9 14h2"/>
+              <path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/>
+              <path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/>
+            </svg>
+          </div>
+          <h4>Liquid Formulations</h4>
+          <p>Syrups and suspensions with taste masking, preservation, and stability enhancement for pediatric and geriatric use.</p>
+        </div>
+        
+        <div class="application-item">
+          <div class="application-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m12 14 4-4"/>
+              <path d="M3.34 19a10 10 0 1 1 17.32 0"/>
+            </svg>
+          </div>
+          <h4>Injectable Solutions</h4>
+          <p>Parenteral formulations meeting stringent pharmaceutical-grade purity requirements for patient safety.</p>
+        </div>
+        
+        <div class="application-item">
+          <div class="application-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h4>Nutraceuticals & OTC</h4>
+          <p>Over-the-counter products and dietary supplements with pharmaceutical-grade quality and safety.</p>
+        </div>
+        
+        <div class="application-item">
+          <div class="application-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <h4>Effervescent Products</h4>
+          <p>Effervescent tablets and powders with rapid dissolution and enhanced consumer convenience.</p>
+        </div>
+        
+        <div class="application-item">
+          <div class="application-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+            </svg>
+          </div>
+          <h4>Medical Devices</h4>
+          <p>Biocompatible coatings and formulations for medical device applications and surgical use.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <h2>Ready to Partner with NCMP Pharma Grade?</h2>
+      <p>
+        Discover how our pharmaceutical-grade ingredients can enhance your formulations. 
+        Contact our dedicated pharma team for technical support, samples, or detailed documentation.
+      </p>
+      <div class="cta-buttons">
+        <a href="https://www.ncmp.com.eg/contact.html" class="btn-cta-primary">Request a Sample</a>
+        <a href="https://www.ncmp.com.eg/contact.html" class="btn-cta-secondary">Schedule Consultation</a>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer>
     <div class="footer-content">
@@ -1440,15 +2020,17 @@
           <div>
             <img src="https://www.ncmp.com.eg/images/logo2.gif" alt="NCMP" class="footer-logo">
             <p class="footer-about">
-              National Company for Maize Products - Egypt's leading corn processing company since 1981.
+              NCMP's strategic division dedicated to pharmaceutical-grade ingredients. 
+              Leveraging 40+ years of manufacturing expertise for pharmaceutical excellence.
             </p>
           </div>
           
           <div>
-            <h4 class="footer-title">Products</h4>
+            <h4 class="footer-title">Product Categories</h4>
             <ul class="footer-links">
-              <li><a href="#pharma">Pharma Grade</a></li>
-              <li><a href="#food">Food Grade</a></li>
+              <li><a href="#products">Sweeteners & Excipients</a></li>
+              <li><a href="#products">Starches & Binders</a></li>
+              <li><a href="#products">Specialty Ingredients</a></li>
               <li>
                 <a href="https://www.ncmp.com.eg/sorbitol.html">
                   Sorbitol
@@ -1463,11 +2045,12 @@
           </div>
           
           <div>
-            <h4 class="footer-title">Company</h4>
+            <h4 class="footer-title">Resources</h4>
             <ul class="footer-links">
-              <li><a href="https://www.ncmp.com.eg/about.html">About Us</a></li>
-              <li><a href="https://www.ncmp.com.eg/quality.html">Quality</a></li>
+              <li><a href="#">Technical Data Sheets</a></li>
+              <li><a href="#">Safety Data Sheets</a></li>
               <li><a href="https://www.ncmp.com.eg/certificate.html">Certifications</a></li>
+              <li><a href="https://www.ncmp.com.eg/quality.html">Quality Documentation</a></li>
             </ul>
           </div>
           
@@ -1492,7 +2075,7 @@
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                   <polyline points="22,6 12,13 2,6"/>
                 </svg>
-                <a href="mailto:info@ncmp.com.eg">info@ncmp.com.eg</a>
+                <a href="mailto:pharma@ncmp.com.eg">pharma@ncmp.com.eg</a>
               </div>
             </div>
           </div>
@@ -1501,7 +2084,9 @@
     </div>
     <div class="footer-bottom">
       <div class="container">
-        © 2025 National Company for Maize Products. All rights reserved.
+        © 2025 NCMP Pharma Grade | National Company for Maize Products. All rights reserved. | 
+        <a href="#" style="color: rgba(255,255,255,0.6);">Privacy Policy</a> | 
+        <a href="#" style="color: rgba(255,255,255,0.6);">Terms of Service</a>
       </div>
     </div>
   </footer>
@@ -1534,11 +2119,21 @@
         }
       });
       
-      // You can add more logic here to switch content
       if (industry === 'food') {
         alert('Food & Nutrition section - Coming soon in the full website!');
       }
     }
+
+    // Smooth scroll for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
   </script>
 </body>
 </html>
