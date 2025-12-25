@@ -11,7 +11,7 @@ interface NavItem {
 const navItems: NavItem[] = [
   { label: "Home", href: "https://www.ncmp.com.eg/", external: true },
   { label: "About Us", href: "https://www.ncmp.com.eg/about.html", external: true },
-  { label: "Quality", href: "https://www.ncmp.com.eg/quality.html", external: true },
+  { label: "Sustainability", href: "#sustainability", external: false },
   { label: "Careers", href: "https://www.ncmp.com.eg/careers.html", external: true },
   { label: "Contact Us", href: "https://www.ncmp.com.eg/contact.html", external: true },
 ];
@@ -27,7 +27,6 @@ interface IndustryTab {
 const industryTabs: IndustryTab[] = [
   { id: "pharma", label: "Pharma & Nutraceuticals", labelAr: "الأدوية والمكملات", isNew: true, color: "pharma-tab" },
   { id: "food", label: "Food & Nutrition", labelAr: "الغذاء والتغذية", color: "food-tab" },
-  { id: "sustainability", label: "Sustainability", labelAr: "الاستدامة", color: "sustainability-tab" },
 ];
 
 interface NCMPNavigationProps {
@@ -78,15 +77,25 @@ export const NCMPNavigation = ({ activeIndustry, onIndustryChange }: NCMPNavigat
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-1">
               {navItems.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  target={item.external ? "_blank" : undefined}
-                  rel={item.external ? "noopener noreferrer" : undefined}
-                  className="ncmp-nav-link"
-                >
-                  {item.label}
-                </a>
+                item.label === "Sustainability" ? (
+                  <button
+                    key={item.label}
+                    onClick={() => onIndustryChange("sustainability")}
+                    className="ncmp-nav-link sustainability-nav-link"
+                  >
+                    {item.label}
+                  </button>
+                ) : (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target={item.external ? "_blank" : undefined}
+                    rel={item.external ? "noopener noreferrer" : undefined}
+                    className="ncmp-nav-link"
+                  >
+                    {item.label}
+                  </a>
+                )
               ))}
             </div>
 
@@ -108,15 +117,28 @@ export const NCMPNavigation = ({ activeIndustry, onIndustryChange }: NCMPNavigat
           {isMobileMenuOpen && (
             <div className="lg:hidden py-4 border-t border-border animate-fade-up">
               {navItems.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  target={item.external ? "_blank" : undefined}
-                  className="block px-4 py-3 text-base font-medium text-foreground hover:text-primary"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
+                item.label === "Sustainability" ? (
+                  <button
+                    key={item.label}
+                    onClick={() => {
+                      onIndustryChange("sustainability");
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="w-full text-left block px-4 py-3 text-base font-medium text-leaf-green hover:text-leaf-green-dark"
+                  >
+                    {item.label}
+                  </button>
+                ) : (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target={item.external ? "_blank" : undefined}
+                    className="block px-4 py-3 text-base font-medium text-foreground hover:text-primary"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                )
               ))}
               <div className="border-t border-border mt-4 pt-4">
                 <p className="px-4 text-xs text-muted-foreground uppercase tracking-wider mb-2">Industries</p>
