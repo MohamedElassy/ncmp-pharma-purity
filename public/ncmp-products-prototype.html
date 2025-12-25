@@ -1,0 +1,1702 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pharma & Food Products | NCMP Egypt - National Company for Maize Products</title>
+  <meta name="description" content="NCMP pharmaceutical and food grade corn-derived products: Sorbitol, Citric Acid, Maltitol, Corn Starch. USP/NF, EP, BP compliant. ISO 9001 & GMP certified Egyptian manufacturer.">
+  <meta name="keywords" content="pharmaceutical sorbitol, citric acid pharma, maltitol, corn starch pharmaceutical, NCMP Egypt, maize products">
+  <link rel="canonical" href="https://www.ncmp.com.eg/products">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pharma & Food Products | NCMP Egypt">
+  <meta property="og:description" content="NCMP pharmaceutical and food grade corn-derived products. ISO 9001 & GMP certified.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.ncmp.com.eg/products">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    /* ============================================
+       NCMP Design System - Standalone HTML Version
+       Based on the React prototype
+       ============================================ */
+    
+    :root {
+      /* NCMP Brand Colors */
+      --background: hsl(0 0% 100%);
+      --foreground: hsl(0 0% 20%);
+      --card: hsl(0 0% 100%);
+      --card-foreground: hsl(0 0% 20%);
+      --primary: hsl(148 70% 32%);
+      --primary-foreground: hsl(0 0% 100%);
+      --secondary: hsl(150 100% 20%);
+      --secondary-foreground: hsl(0 0% 100%);
+      --muted: hsl(0 0% 96%);
+      --muted-foreground: hsl(0 0% 45%);
+      --accent: hsl(38 92% 55%);
+      --border: hsl(0 0% 90%);
+      
+      /* Extended Palette */
+      --ncmp-green: hsl(148 70% 32%);
+      --ncmp-green-dark: hsl(150 100% 20%);
+      --corn-gold: hsl(38 92% 55%);
+      --corn-gold-light: hsl(42 95% 70%);
+      --pharma-blue: hsl(200 60% 50%);
+      --pharma-blue-light: hsl(200 50% 95%);
+      --food-orange: hsl(25 95% 53%);
+      --food-orange-light: hsl(30 90% 95%);
+      
+      /* Shadows */
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Open Sans', Arial, sans-serif;
+      background: var(--background);
+      color: var(--foreground);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    /* ============ Layout ============ */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    @media (min-width: 640px) {
+      .container { padding: 0 1.5rem; }
+    }
+    
+    @media (min-width: 1024px) {
+      .container { padding: 0 2rem; }
+    }
+    
+    /* ============ Top Bar ============ */
+    .top-bar {
+      background: var(--secondary);
+      color: var(--secondary-foreground);
+      font-size: 0.75rem;
+      padding: 0.5rem 0;
+    }
+    
+    .top-bar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .top-bar a {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      transition: color 0.2s;
+    }
+    
+    .top-bar a:hover {
+      color: var(--corn-gold-light);
+    }
+    
+    .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .top-bar-separator {
+      color: rgba(255,255,255,0.3);
+    }
+    
+    /* ============ Main Navigation ============ */
+    .main-nav {
+      position: fixed;
+      top: 28px;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: rgba(255,255,255,0.98);
+      backdrop-filter: blur(8px);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .main-nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    
+    @media (min-width: 1024px) {
+      .main-nav .container { height: 80px; }
+    }
+    
+    .logo img {
+      height: 48px;
+    }
+    
+    @media (min-width: 1024px) {
+      .logo img { height: 56px; }
+    }
+    
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    
+    @media (min-width: 1024px) {
+      .nav-links { display: flex; }
+    }
+    
+    .nav-link {
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--foreground);
+      transition: color 0.2s;
+    }
+    
+    .nav-link:hover {
+      color: var(--primary);
+    }
+    
+    /* Mobile Menu Button */
+    .mobile-menu-btn {
+      display: block;
+      padding: 0.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    
+    @media (min-width: 1024px) {
+      .mobile-menu-btn { display: none; }
+    }
+    
+    /* Mobile Menu */
+    .mobile-menu {
+      display: none;
+      padding: 1rem 0;
+      border-top: 1px solid var(--border);
+    }
+    
+    .mobile-menu.open {
+      display: block;
+    }
+    
+    .mobile-menu a {
+      display: block;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    
+    /* ============ Industry Tabs ============ */
+    .industry-tabs-bar {
+      position: fixed;
+      top: 100px;
+      left: 0;
+      right: 0;
+      z-index: 40;
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    @media (min-width: 1024px) {
+      .industry-tabs-bar { top: 108px; }
+    }
+    
+    .industry-tabs {
+      display: flex;
+      overflow-x: auto;
+    }
+    
+    .industry-tab {
+      position: relative;
+      padding: 1rem 1.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      white-space: nowrap;
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .industry-tab.pharma-tab {
+      color: var(--pharma-blue);
+    }
+    
+    .industry-tab.pharma-tab.active {
+      border-bottom-color: var(--pharma-blue);
+      background: var(--pharma-blue-light);
+    }
+    
+    .industry-tab.food-tab {
+      color: var(--food-orange);
+    }
+    
+    .industry-tab.food-tab.active {
+      border-bottom-color: var(--food-orange);
+      background: var(--food-orange-light);
+    }
+    
+    .badge-new {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.125rem 0.5rem;
+      font-size: 0.625rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, var(--pharma-blue) 0%, hsl(280 60% 50%) 100%);
+      color: white;
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); }
+      50% { box-shadow: 0 0 15px rgba(59, 130, 246, 0.8); }
+    }
+    
+    /* ============ Hero Section ============ */
+    .hero {
+      padding-top: 148px;
+    }
+    
+    @media (min-width: 1024px) {
+      .hero { padding-top: 156px; }
+    }
+    
+    .hero-banner {
+      position: relative;
+      height: 60vh;
+      min-height: 450px;
+      max-height: 600px;
+      overflow: hidden;
+    }
+    
+    .hero-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, 
+        hsla(150, 100%, 20%, 0.85) 0%,
+        hsla(148, 70%, 32%, 0.7) 50%,
+        transparent 100%
+      );
+    }
+    
+    .hero-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+    }
+    
+    .hero-text {
+      max-width: 42rem;
+      color: white;
+      animation: slideInLeft 0.6s ease-out;
+    }
+    
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    
+    .hero-badges {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    
+    .hero-cert {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--corn-gold-light);
+    }
+    
+    .hero h1 {
+      font-size: 1.875rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    
+    @media (min-width: 640px) {
+      .hero h1 { font-size: 2.25rem; }
+    }
+    
+    @media (min-width: 1024px) {
+      .hero h1 { font-size: 3rem; }
+    }
+    
+    .hero h1 span {
+      display: block;
+      color: var(--corn-gold-light);
+      margin-top: 0.5rem;
+    }
+    
+    .hero p {
+      font-size: 1.125rem;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 1.5rem;
+      line-height: 1.75;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.625rem 1.25rem;
+      font-weight: 600;
+      font-size: 0.875rem;
+      border-radius: 0.375rem;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    
+    .btn-pharma {
+      background: var(--pharma-blue);
+      color: white;
+    }
+    
+    .btn-pharma:hover {
+      background: hsl(200 70% 40%);
+    }
+    
+    .btn-food {
+      background: var(--food-orange);
+      color: white;
+    }
+    
+    .btn-food:hover {
+      background: hsl(25 90% 45%);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+    
+    .btn-outline:hover {
+      background: white;
+      color: var(--secondary);
+    }
+    
+    /* Stats Banner */
+    .stats-banner {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,51,27,0.95), transparent);
+      padding: 1.5rem 0;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      color: white;
+      text-align: center;
+    }
+    
+    @media (min-width: 768px) {
+      .stats-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--corn-gold-light);
+    }
+    
+    @media (min-width: 1024px) {
+      .stat-value { font-size: 1.875rem; }
+    }
+    
+    .stat-label {
+      font-size: 0.75rem;
+      opacity: 0.9;
+    }
+    
+    @media (min-width: 1024px) {
+      .stat-label { font-size: 0.875rem; }
+    }
+    
+    /* Breadcrumb */
+    .breadcrumb-bar {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+    }
+    
+    .breadcrumb-bar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+    }
+    
+    .breadcrumb a:hover {
+      color: var(--primary);
+    }
+    
+    .breadcrumb-current {
+      font-weight: 500;
+      color: var(--foreground);
+    }
+    
+    .compliance-badge {
+      display: none;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--pharma-blue);
+      font-weight: 500;
+    }
+    
+    @media (min-width: 768px) {
+      .compliance-badge { display: flex; }
+    }
+    
+    /* ============ Sections ============ */
+    .section {
+      padding: 3rem 0;
+    }
+    
+    @media (min-width: 1024px) {
+      .section { padding: 4rem 0; }
+    }
+    
+    .section-pharma {
+      background: var(--pharma-blue-light);
+    }
+    
+    .section-food {
+      background: var(--food-orange-light);
+    }
+    
+    .section-header {
+      margin-bottom: 2rem;
+    }
+    
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    @media (min-width: 640px) {
+      .section-title { font-size: 1.875rem; }
+    }
+    
+    .section-title.pharma {
+      color: var(--pharma-blue);
+    }
+    
+    .section-title.food {
+      color: var(--food-orange);
+    }
+    
+    .section-subtitle {
+      color: var(--muted-foreground);
+    }
+    
+    /* ============ Product Cards ============ */
+    .product-card {
+      background: var(--card);
+      border-radius: 0.5rem;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: all 0.3s;
+      margin-bottom: 1.5rem;
+    }
+    
+    .product-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+    }
+    
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    
+    @media (min-width: 1024px) {
+      .product-grid { grid-template-columns: 1fr 2fr; }
+    }
+    
+    .product-image {
+      position: relative;
+      height: 256px;
+      background: var(--muted);
+      overflow: hidden;
+    }
+    
+    @media (min-width: 1024px) {
+      .product-image { height: auto; min-height: 300px; }
+    }
+    
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .grade-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      padding: 0.25rem 0.625rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: var(--primary);
+      color: white;
+      border-radius: 0.25rem;
+    }
+    
+    .product-content {
+      padding: 1.5rem;
+    }
+    
+    .product-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      padding: 0.25rem 0.625rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 0.25rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .product-badge.pharma {
+      background: var(--pharma-blue-light);
+      color: hsl(200 60% 40%);
+    }
+    
+    .product-badge.food {
+      background: var(--food-orange-light);
+      color: hsl(25 90% 40%);
+    }
+    
+    .product-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--foreground);
+    }
+    
+    .product-subtitle {
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+      margin-bottom: 0.75rem;
+    }
+    
+    .product-desc {
+      font-size: 0.875rem;
+      color: rgba(51, 51, 51, 0.8);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+    
+    .product-meta {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+    }
+    
+    .product-meta-label {
+      color: var(--muted-foreground);
+    }
+    
+    .product-meta-value {
+      font-weight: 500;
+      margin-left: 0.5rem;
+    }
+    
+    .applications {
+      margin-bottom: 1rem;
+    }
+    
+    .applications-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .applications-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    
+    .application-tag {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.75rem;
+      background: var(--muted);
+      color: var(--muted-foreground);
+      border-radius: 0.25rem;
+    }
+    
+    .toggle-specs-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--pharma-blue);
+      font-weight: 600;
+      font-size: 0.875rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+    
+    .toggle-specs-btn:hover {
+      text-decoration: underline;
+    }
+    
+    /* Specifications */
+    .specifications {
+      display: none;
+      border-top: 1px solid var(--border);
+      padding: 1.5rem;
+      animation: fadeUp 0.3s ease-out;
+    }
+    
+    .specifications.open {
+      display: block;
+    }
+    
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .specs-grid {
+      display: grid;
+      gap: 1rem;
+    }
+    
+    @media (min-width: 768px) {
+      .specs-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    
+    @media (min-width: 1024px) {
+      .specs-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    
+    .spec-table {
+      border: 1px solid var(--border);
+      border-radius: 0.375rem;
+      overflow: hidden;
+    }
+    
+    .spec-header {
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: white;
+    }
+    
+    .spec-header.physical { background: var(--ncmp-green); }
+    .spec-header.chemical { background: var(--pharma-blue); }
+    .spec-header.heavy-metal { background: hsl(0 60% 50%); }
+    .spec-header.sugar { background: var(--corn-gold); color: var(--foreground); }
+    .spec-header.bacteriological { background: hsl(280 60% 50%); }
+    
+    .spec-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .spec-table td {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .spec-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .spec-label {
+      color: var(--muted-foreground);
+    }
+    
+    .spec-value {
+      font-weight: 500;
+      text-align: right;
+    }
+    
+    .specs-actions {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 1rem;
+    }
+    
+    /* Food Products Grid */
+    .food-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    
+    @media (min-width: 768px) {
+      .food-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    
+    @media (min-width: 1024px) {
+      .food-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    
+    .food-card {
+      background: var(--card);
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-md);
+      transition: all 0.3s;
+    }
+    
+    .food-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+    }
+    
+    .food-card .product-title {
+      font-size: 1.125rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .food-card .product-desc {
+      margin-bottom: 1rem;
+    }
+    
+    .food-card .packaging {
+      font-size: 0.75rem;
+      color: var(--muted-foreground);
+      margin-bottom: 0.75rem;
+    }
+    
+    .food-card .btn {
+      width: 100%;
+      margin-top: 1rem;
+    }
+    
+    /* ============ Footer ============ */
+    .footer {
+      background: var(--secondary);
+      color: var(--secondary-foreground);
+    }
+    
+    .footer-main {
+      padding: 3rem 0;
+    }
+    
+    .footer-grid {
+      display: grid;
+      gap: 2rem;
+    }
+    
+    @media (min-width: 768px) {
+      .footer-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    
+    .footer-logo {
+      height: 64px;
+      background: white;
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-desc {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.8);
+    }
+    
+    .footer-title {
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-links a {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.8);
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      transition: color 0.2s;
+    }
+    
+    .footer-links a:hover {
+      color: white;
+    }
+    
+    .footer-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .footer-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.8);
+    }
+    
+    .footer-contact-item a:hover {
+      color: white;
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.2);
+      padding: 1rem 0;
+      text-align: center;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.6);
+    }
+    
+    /* ============ Utilities ============ */
+    .hidden { display: none !important; }
+    
+    .icon {
+      width: 1rem;
+      height: 1rem;
+    }
+    
+    .icon-lg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+    
+    .icon-xl {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- ============ Top Bar ============ -->
+  <div class="top-bar">
+    <div class="container">
+      <a href="tel:+20222023456">
+        <i data-lucide="phone" class="icon"></i>
+        <span>+20 2 2202 3456</span>
+      </a>
+      <div class="top-bar-right">
+        <a href="https://www.ncmp.com.eg/contact.html">Contact Customer Care</a>
+        <span class="top-bar-separator">|</span>
+        <a href="#products">
+          <i data-lucide="search" class="icon"></i>
+          Find a Product
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ Main Navigation ============ -->
+  <nav class="main-nav">
+    <div class="container">
+      <a href="https://www.ncmp.com.eg/" class="logo">
+        <img src="https://www.ncmp.com.eg/images/logo2.gif" alt="NCMP - National Company for Maize Products">
+      </a>
+      
+      <div class="nav-links">
+        <a href="https://www.ncmp.com.eg/" class="nav-link">Home</a>
+        <a href="https://www.ncmp.com.eg/about.html" class="nav-link">About Us</a>
+        <a href="https://www.ncmp.com.eg/quality.html" class="nav-link">Quality</a>
+        <a href="https://www.ncmp.com.eg/careers.html" class="nav-link">Careers</a>
+        <a href="https://www.ncmp.com.eg/contact.html" class="nav-link">Contact Us</a>
+      </div>
+      
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+        <i data-lucide="menu" class="icon-lg" id="menu-icon"></i>
+      </button>
+    </div>
+    
+    <div class="mobile-menu container" id="mobile-menu">
+      <a href="https://www.ncmp.com.eg/">Home</a>
+      <a href="https://www.ncmp.com.eg/about.html">About Us</a>
+      <a href="https://www.ncmp.com.eg/quality.html">Quality</a>
+      <a href="https://www.ncmp.com.eg/careers.html">Careers</a>
+      <a href="https://www.ncmp.com.eg/contact.html">Contact Us</a>
+    </div>
+  </nav>
+
+  <!-- ============ Industry Tabs ============ -->
+  <div class="industry-tabs-bar">
+    <div class="container">
+      <div class="industry-tabs">
+        <button class="industry-tab pharma-tab active" onclick="switchIndustry('pharma')" id="tab-pharma">
+          Pharma & Nutraceuticals
+          <span class="badge-new">
+            <i data-lucide="sparkles" style="width:12px;height:12px"></i>
+            New
+          </span>
+        </button>
+        <button class="industry-tab food-tab" onclick="switchIndustry('food')" id="tab-food">
+          Food & Nutrition
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ Hero Section ============ -->
+  <header class="hero">
+    <div class="hero-banner">
+      <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1920&q=80" alt="NCMP Pharmaceutical Manufacturing">
+      <div class="hero-overlay"></div>
+      
+      <div class="hero-content">
+        <div class="container">
+          <div class="hero-text" id="hero-pharma">
+            <div class="hero-badges">
+              <span class="badge-new">
+                <i data-lucide="flask-conical" style="width:14px;height:14px"></i>
+                New Sector
+              </span>
+              <span class="hero-cert">ISO 9001 • GMP • HACCP</span>
+            </div>
+            <h1>
+              Pharma & Nutraceuticals
+              <span>Grade Ingredients</span>
+            </h1>
+            <p>NCMP enters the pharmaceutical sector with premium corn-derived excipients that meet the most stringent international pharmacopoeial standards (USP/NF, EP, BP).</p>
+            <div class="hero-buttons">
+              <a href="#products" class="btn btn-pharma">
+                Explore Pharma Products
+                <i data-lucide="chevron-right" class="icon"></i>
+              </a>
+              <a href="#certifications" class="btn btn-outline">Our Certifications</a>
+            </div>
+          </div>
+          
+          <div class="hero-text hidden" id="hero-food">
+            <div class="hero-badges">
+              <i data-lucide="leaf" style="width:20px;height:20px;color:var(--corn-gold-light)"></i>
+              <span class="hero-cert">Trusted Since 1982</span>
+            </div>
+            <h1>
+              Food & Nutrition
+              <span>Grade Ingredients</span>
+            </h1>
+            <p>Egypt's leading manufacturer of corn-based ingredients for the food and beverage industry. From glucose syrups to starches, we deliver quality and consistency.</p>
+            <div class="hero-buttons">
+              <a href="#products" class="btn btn-food">
+                Explore Food Products
+                <i data-lucide="chevron-right" class="icon"></i>
+              </a>
+              <a href="https://www.ncmp.com.eg/about.html" class="btn btn-outline">About NCMP</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="stats-banner">
+        <div class="container">
+          <div class="stats-grid">
+            <div>
+              <div class="stat-value">40+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+            <div>
+              <div class="stat-value">100%</div>
+              <div class="stat-label">Egyptian Corn</div>
+            </div>
+            <div>
+              <div class="stat-value">ISO</div>
+              <div class="stat-label">9001:2015 Certified</div>
+            </div>
+            <div>
+              <div class="stat-value">GMP</div>
+              <div class="stat-label">Compliant Facility</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="breadcrumb-bar" id="products">
+      <div class="container">
+        <nav class="breadcrumb">
+          <a href="https://www.ncmp.com.eg/">Home</a>
+          <i data-lucide="chevron-right" class="icon"></i>
+          <span class="breadcrumb-current" id="breadcrumb-text">Pharma & Nutraceuticals</span>
+        </nav>
+        <div class="compliance-badge" id="compliance-badge">
+          <i data-lucide="award" class="icon"></i>
+          <span>USP/NF • EP • BP Compliant</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ Pharma Products Section ============ -->
+  <section class="section section-pharma" id="section-pharma">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title pharma">
+          <i data-lucide="flask-conical" class="icon-xl"></i>
+          Pharma Grade Products
+        </h2>
+        <p class="section-subtitle">Pharmaceutical-grade ingredients meeting USP, BP, and EP standards for the pharmaceutical industry.</p>
+      </div>
+      
+      <!-- Sorbitol -->
+      <article class="product-card">
+        <div class="product-grid">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80" alt="Pharmaceutical Sorbitol - NCMP">
+            <span class="grade-badge">USP/NF/EP</span>
+          </div>
+          <div class="product-content">
+            <span class="product-badge pharma">Pharma Grade</span>
+            <h3 class="product-title">Sorbitol</h3>
+            <p class="product-subtitle">Pharmaceutical Grade - D-Glucitol</p>
+            <p class="product-desc">Sorbitol is a versatile product with wide pharmaceutical and medical applications. Used in cough syrups, laxatives, and pharmaceutical formulations. NCMP Sorbitol meets USP/NF and EP standards for pharmaceutical use.</p>
+            
+            <div class="product-meta">
+              <div>
+                <span class="product-meta-label">CAS Number:</span>
+                <span class="product-meta-value">50-70-4</span>
+              </div>
+              <div>
+                <span class="product-meta-label">Packaging:</span>
+                <span class="product-meta-value">291kg drums or 500kg-35000kg Bulk</span>
+              </div>
+            </div>
+            
+            <div class="applications">
+              <h4 class="applications-title">Applications:</h4>
+              <div class="applications-list">
+                <span class="application-tag">Cough syrups and oral liquids</span>
+                <span class="application-tag">Tablet coating and excipient</span>
+                <span class="application-tag">Laxative formulations</span>
+                <span class="application-tag">Parenteral solutions</span>
+                <span class="application-tag">Toothpaste and oral care</span>
+              </div>
+            </div>
+            
+            <button class="toggle-specs-btn" onclick="toggleSpecs('sorbitol')">
+              <i data-lucide="file-text" class="icon"></i>
+              <span id="sorbitol-btn-text">View Technical Specifications</span>
+              <i data-lucide="chevron-down" class="icon" id="sorbitol-chevron"></i>
+            </button>
+          </div>
+        </div>
+        
+        <div class="specifications" id="sorbitol-specs">
+          <div class="specs-grid">
+            <div class="spec-table">
+              <div class="spec-header physical">Physical Characteristics</div>
+              <table>
+                <tr><td class="spec-label">Definition</td><td class="spec-value">Aqueous solution of polyols at 70% of total solids</td></tr>
+                <tr><td class="spec-label">Description</td><td class="spec-value">Clear colourless, Syrup liquid, Sweet taste</td></tr>
+                <tr><td class="spec-label">Dry Substance (w/w%)</td><td class="spec-value">70 ± 0.5%</td></tr>
+                <tr><td class="spec-label">Brix (20°C)</td><td class="spec-value">66.9 - 67.8</td></tr>
+                <tr><td class="spec-label">Refractive Index (20°C)</td><td class="spec-value">Min. 1.4976</td></tr>
+                <tr><td class="spec-label">Water Content</td><td class="spec-value">30 ± 0.5%</td></tr>
+                <tr><td class="spec-label">Viscosity 30°C (mPa.s)</td><td class="spec-value">200</td></tr>
+              </table>
+            </div>
+            
+            <div class="spec-table">
+              <div class="spec-header chemical">Chemical Characteristics</div>
+              <table>
+                <tr><td class="spec-label">Ash Content</td><td class="spec-value">Max. 0.1%</td></tr>
+                <tr><td class="spec-label">SO₂</td><td class="spec-value">Max. 50 ppm</td></tr>
+                <tr><td class="spec-label">pH (50% D.S)</td><td class="spec-value">5.0 - 7.0</td></tr>
+                <tr><td class="spec-label">Reducing Sugars</td><td class="spec-value">Max. 0.2%</td></tr>
+                <tr><td class="spec-label">Chloride</td><td class="spec-value">Max. 10 ppm</td></tr>
+              </table>
+            </div>
+            
+            <div class="spec-table">
+              <div class="spec-header heavy-metal">Heavy Metal Analysis</div>
+              <table>
+                <tr><td class="spec-label">Heavy Metal (Total)</td><td class="spec-value">Max. 5 ppm</td></tr>
+                <tr><td class="spec-label">Iron (Fe)</td><td class="spec-value">Max. 2 ppm</td></tr>
+                <tr><td class="spec-label">Arsenic (As)</td><td class="spec-value">Max. 3 ppm</td></tr>
+                <tr><td class="spec-label">Nickel (Ni)</td><td class="spec-value">Max. 1 ppm</td></tr>
+                <tr><td class="spec-label">Lead (Pb)</td><td class="spec-value">Max. 1 ppm</td></tr>
+              </table>
+            </div>
+            
+            <div class="spec-table">
+              <div class="spec-header sugar">Sugar Spectrum</div>
+              <table>
+                <tr><td class="spec-label">Sorbitol Content</td><td class="spec-value">Min. 92%</td></tr>
+                <tr><td class="spec-label">Total Sugar</td><td class="spec-value">Max. 8%</td></tr>
+              </table>
+            </div>
+            
+            <div class="spec-table">
+              <div class="spec-header bacteriological">Microbiological Limits</div>
+              <table>
+                <tr><td class="spec-label">Yeast</td><td class="spec-value">NMT 100/1 ml</td></tr>
+                <tr><td class="spec-label">Mould</td><td class="spec-value">NMT 100/1 ml</td></tr>
+                <tr><td class="spec-label">Mesophilic Bacteria</td><td class="spec-value">NMT 100/1 ml</td></tr>
+              </table>
+            </div>
+          </div>
+          
+          <div class="specs-actions">
+            <a href="https://www.ncmp.com.eg/contact.html" class="btn btn-pharma">Request Sample</a>
+            <a href="#" class="btn btn-outline" style="color:var(--pharma-blue);border-color:var(--pharma-blue)">
+              <i data-lucide="download" class="icon"></i>
+              Download TDS
+            </a>
+          </div>
+        </div>
+      </article>
+      
+      <!-- Citric Acid -->
+      <article class="product-card">
+        <div class="product-grid">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600&q=80" alt="Citric Acid Pharmaceutical Grade - NCMP">
+            <span class="grade-badge">BP/USP/EP</span>
+          </div>
+          <div class="product-content">
+            <span class="product-badge pharma">Pharma Grade</span>
+            <h3 class="product-title">Citric Acid</h3>
+            <p class="product-subtitle">Pharmaceutical Grade - Anhydrous</p>
+            <p class="product-desc">Ultra-pure anhydrous citric acid for pharmaceutical applications. Essential for pH adjustment, buffering systems, and as a chelating agent in pharmaceutical preparations.</p>
+            
+            <div class="product-meta">
+              <div>
+                <span class="product-meta-label">CAS Number:</span>
+                <span class="product-meta-value">77-92-9</span>
+              </div>
+              <div>
+                <span class="product-meta-label">Packaging:</span>
+                <span class="product-meta-value">25kg bags or bulk containers</span>
+              </div>
+            </div>
+            
+            <div class="applications">
+              <h4 class="applications-title">Applications:</h4>
+              <div class="applications-list">
+                <span class="application-tag">Buffer systems in formulations</span>
+                <span class="application-tag">Effervescent tablet formulations</span>
+                <span class="application-tag">Ophthalmic solutions</span>
+                <span class="application-tag">pH adjustment in injectables</span>
+                <span class="application-tag">Chelating agent</span>
+              </div>
+            </div>
+            
+            <button class="toggle-specs-btn" onclick="toggleSpecs('citric')">
+              <i data-lucide="file-text" class="icon"></i>
+              <span id="citric-btn-text">View Technical Specifications</span>
+              <i data-lucide="chevron-down" class="icon" id="citric-chevron"></i>
+            </button>
+          </div>
+        </div>
+        
+        <div class="specifications" id="citric-specs">
+          <div class="specs-grid">
+            <div class="spec-table">
+              <div class="spec-header physical">Physical Characteristics</div>
+              <table>
+                <tr><td class="spec-label">Appearance</td><td class="spec-value">White crystalline powder</td></tr>
+                <tr><td class="spec-label">Assay</td><td class="spec-value">99.5 - 100.5%</td></tr>
+                <tr><td class="spec-label">Melting Point</td><td class="spec-value">153°C</td></tr>
+                <tr><td class="spec-label">Solubility in Water</td><td class="spec-value">Freely soluble</td></tr>
+              </table>
+            </div>
+            
+            <div class="spec-table">
+              <div class="spec-header chemical">Chemical Characteristics</div>
+              <table>
+                <tr><td class="spec-label">Sulfate</td><td class="spec-value">Max. 150 ppm</td></tr>
+                <tr><td class="spec-label">Oxalic Acid</td><td class="spec-value">Max. 350 ppm</td></tr>
+                <tr><td class="spec-label">Residue on Ignition</td><td class="spec-value">Max. 0.05%</td></tr>
+                <tr><td class="spec-label">Water Content</td><td class="spec-value">Max. 0.5%</td></tr>
+              </table>
+            </div>
+            
+            <div class="spec-table">
+              <div class="spec-header heavy-metal">Heavy Metal Analysis</div>
+              <table>
+                <tr><td class="spec-label">Heavy Metal (Total)</td><td class="spec-value">Max. 10 ppm</td></tr>
+                <tr><td class="spec-label">Lead (Pb)</td><td class="spec-value">Max. 0.5 ppm</td></tr>
+                <tr><td class="spec-label">Arsenic (As)</td><td class="spec-value">Max. 1 ppm</td></tr>
+              </table>
+            </div>
+          </div>
+          
+          <div class="specs-actions">
+            <a href="https://www.ncmp.com.eg/contact.html" class="btn btn-pharma">Request Sample</a>
+            <a href="#" class="btn btn-outline" style="color:var(--pharma-blue);border-color:var(--pharma-blue)">
+              <i data-lucide="download" class="icon"></i>
+              Download TDS
+            </a>
+          </div>
+        </div>
+      </article>
+      
+      <!-- Maltitol -->
+      <article class="product-card">
+        <div class="product-grid">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&q=80" alt="Maltitol Pharmaceutical Grade - NCMP">
+            <span class="grade-badge">EP/USP-NF</span>
+          </div>
+          <div class="product-content">
+            <span class="product-badge pharma">Pharma Grade</span>
+            <h3 class="product-title">Maltitol</h3>
+            <p class="product-subtitle">Pharmaceutical Grade - Crystalline</p>
+            <p class="product-desc">High-quality maltitol powder for sugar-free pharmaceutical preparations and nutraceuticals. Excellent taste profile with low glycemic response.</p>
+            
+            <div class="product-meta">
+              <div>
+                <span class="product-meta-label">CAS Number:</span>
+                <span class="product-meta-value">585-88-6</span>
+              </div>
+              <div>
+                <span class="product-meta-label">Packaging:</span>
+                <span class="product-meta-value">25kg bags</span>
+              </div>
+            </div>
+            
+            <div class="applications">
+              <h4 class="applications-title">Applications:</h4>
+              <div class="applications-list">
+                <span class="application-tag">Chewable tablets</span>
+                <span class="application-tag">Sugar-free syrups</span>
+                <span class="application-tag">Lozenges</span>
+                <span class="application-tag">Nutraceuticals</span>
+              </div>
+            </div>
+            
+            <button class="toggle-specs-btn" onclick="toggleSpecs('maltitol')">
+              <i data-lucide="file-text" class="icon"></i>
+              <span id="maltitol-btn-text">View Technical Specifications</span>
+              <i data-lucide="chevron-down" class="icon" id="maltitol-chevron"></i>
+            </button>
+          </div>
+        </div>
+        
+        <div class="specifications" id="maltitol-specs">
+          <div class="specs-grid">
+            <div class="spec-table">
+              <div class="spec-header physical">Physical Characteristics</div>
+              <table>
+                <tr><td class="spec-label">Appearance</td><td class="spec-value">White crystalline powder</td></tr>
+                <tr><td class="spec-label">Maltitol Content</td><td class="spec-value">Min. 98%</td></tr>
+                <tr><td class="spec-label">Melting Point</td><td class="spec-value">145-152°C</td></tr>
+              </table>
+            </div>
+            
+            <div class="spec-table">
+              <div class="spec-header chemical">Chemical Characteristics</div>
+              <table>
+                <tr><td class="spec-label">Sorbitol Content</td><td class="spec-value">Max. 4%</td></tr>
+                <tr><td class="spec-label">Reducing Sugars</td><td class="spec-value">Max. 0.1%</td></tr>
+                <tr><td class="spec-label">Conductivity</td><td class="spec-value">Max. 20 µS/cm</td></tr>
+                <tr><td class="spec-label">Sulfated Ash</td><td class="spec-value">Max. 0.1%</td></tr>
+              </table>
+            </div>
+          </div>
+          
+          <div class="specs-actions">
+            <a href="https://www.ncmp.com.eg/contact.html" class="btn btn-pharma">Request Sample</a>
+            <a href="#" class="btn btn-outline" style="color:var(--pharma-blue);border-color:var(--pharma-blue)">
+              <i data-lucide="download" class="icon"></i>
+              Download TDS
+            </a>
+          </div>
+        </div>
+      </article>
+      
+      <!-- Corn Starch -->
+      <article class="product-card">
+        <div class="product-grid">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&q=80" alt="Pharmaceutical Corn Starch - NCMP">
+            <span class="grade-badge">USP/NF/BP</span>
+          </div>
+          <div class="product-content">
+            <span class="product-badge pharma">Pharma Grade</span>
+            <h3 class="product-title">Corn Starch</h3>
+            <p class="product-subtitle">Pharmaceutical/Medical Grade</p>
+            <p class="product-desc">Premium pharmaceutical-grade corn starch from select Egyptian maize. Critical excipient for tablet disintegration, binding, and medical applications.</p>
+            
+            <div class="product-meta">
+              <div>
+                <span class="product-meta-label">CAS Number:</span>
+                <span class="product-meta-value">9005-25-8</span>
+              </div>
+              <div>
+                <span class="product-meta-label">Packaging:</span>
+                <span class="product-meta-value">25kg bags or bulk</span>
+              </div>
+            </div>
+            
+            <div class="applications">
+              <h4 class="applications-title">Applications:</h4>
+              <div class="applications-list">
+                <span class="application-tag">Tablet disintegrant</span>
+                <span class="application-tag">Capsule filler</span>
+                <span class="application-tag">Surgical glove powder</span>
+                <span class="application-tag">Binder in tablets</span>
+              </div>
+            </div>
+            
+            <button class="toggle-specs-btn" onclick="toggleSpecs('cornstarch')">
+              <i data-lucide="file-text" class="icon"></i>
+              <span id="cornstarch-btn-text">View Technical Specifications</span>
+              <i data-lucide="chevron-down" class="icon" id="cornstarch-chevron"></i>
+            </button>
+          </div>
+        </div>
+        
+        <div class="specifications" id="cornstarch-specs">
+          <div class="specs-grid">
+            <div class="spec-table">
+              <div class="spec-header physical">Physical Characteristics</div>
+              <table>
+                <tr><td class="spec-label">Appearance</td><td class="spec-value">Fine white powder</td></tr>
+                <tr><td class="spec-label">Loss on Drying</td><td class="spec-value">Max. 14%</td></tr>
+                <tr><td class="spec-label">pH</td><td class="spec-value">4.5 - 7.0</td></tr>
+                <tr><td class="spec-label">Particle Size</td><td class="spec-value">Controlled distribution</td></tr>
+              </table>
+            </div>
+            
+            <div class="spec-table">
+              <div class="spec-header chemical">Chemical Characteristics</div>
+              <table>
+                <tr><td class="spec-label">Protein</td><td class="spec-value">Max. 0.5%</td></tr>
+                <tr><td class="spec-label">Iron (Fe)</td><td class="spec-value">Max. 10 ppm</td></tr>
+                <tr><td class="spec-label">Sulfur Dioxide</td><td class="spec-value">Max. 50 ppm</td></tr>
+              </table>
+            </div>
+            
+            <div class="spec-table">
+              <div class="spec-header bacteriological">Microbiological Limits</div>
+              <table>
+                <tr><td class="spec-label">Total Aerobic Count</td><td class="spec-value">USP &lt;61&gt;</td></tr>
+                <tr><td class="spec-label">E. coli</td><td class="spec-value">Absent</td></tr>
+                <tr><td class="spec-label">Salmonella</td><td class="spec-value">Absent</td></tr>
+              </table>
+            </div>
+          </div>
+          
+          <div class="specs-actions">
+            <a href="https://www.ncmp.com.eg/contact.html" class="btn btn-pharma">Request Sample</a>
+            <a href="#" class="btn btn-outline" style="color:var(--pharma-blue);border-color:var(--pharma-blue)">
+              <i data-lucide="download" class="icon"></i>
+              Download TDS
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ Food Products Section ============ -->
+  <section class="section section-food hidden" id="section-food">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title food">
+          <i data-lucide="utensils" class="icon-xl"></i>
+          Food Grade Products
+        </h2>
+        <p class="section-subtitle">High-quality food-grade ingredients for the food and beverage industry.</p>
+      </div>
+      
+      <div class="food-grid">
+        <!-- Glucose Syrup -->
+        <article class="food-card">
+          <span class="product-badge food">Food Grade</span>
+          <h3 class="product-title">Glucose Syrup</h3>
+          <p class="product-desc">High-quality glucose syrup for confectionery, beverages, and food manufacturing. Available in various DE (Dextrose Equivalent) grades.</p>
+          <p class="packaging"><strong>Packaging:</strong> Bulk tankers or drums</p>
+          <div class="applications-list">
+            <span class="application-tag">Confectionery</span>
+            <span class="application-tag">Beverages</span>
+            <span class="application-tag">Bakery</span>
+            <span class="application-tag">Ice cream</span>
+          </div>
+          <a href="https://www.ncmp.com.eg/contact.html" class="btn btn-food">Learn More</a>
+        </article>
+        
+        <!-- Fructose 55 -->
+        <article class="food-card">
+          <span class="product-badge food">Food Grade</span>
+          <h3 class="product-title">Fructose 55</h3>
+          <p class="product-desc">High fructose corn syrup (HFCS 55) with 55% fructose content. Ideal for beverage sweetening with excellent solubility.</p>
+          <p class="packaging"><strong>Packaging:</strong> Bulk tankers</p>
+          <div class="applications-list">
+            <span class="application-tag">Soft drinks</span>
+            <span class="application-tag">Juices</span>
+            <span class="application-tag">Dairy products</span>
+          </div>
+          <a href="https://www.ncmp.com.eg/contact.html" class="btn btn-food">Learn More</a>
+        </article>
+        
+        <!-- Fructose 42 -->
+        <article class="food-card">
+          <span class="product-badge food">Food Grade</span>
+          <h3 class="product-title">Fructose 42</h3>
+          <p class="product-desc">High fructose corn syrup (HFCS 42) with 42% fructose content. Perfect for food manufacturing and baked goods.</p>
+          <p class="packaging"><strong>Packaging:</strong> Bulk tankers or drums</p>
+          <div class="applications-list">
+            <span class="application-tag">Bakery</span>
+            <span class="application-tag">Canned foods</span>
+            <span class="application-tag">Condiments</span>
+            <span class="application-tag">Cereals</span>
+          </div>
+          <a href="https://www.ncmp.com.eg/contact.html" class="btn btn-food">Learn More</a>
+        </article>
+        
+        <!-- Maltodextrin -->
+        <article class="food-card">
+          <span class="product-badge food">Food Grade</span>
+          <h3 class="product-title">Maltodextrin</h3>
+          <p class="product-desc">Food-grade maltodextrin as a versatile carbohydrate source. Used as thickener, filler, and carrier in food products.</p>
+          <p class="packaging"><strong>Packaging:</strong> 25kg bags or bulk</p>
+          <div class="applications-list">
+            <span class="application-tag">Sports nutrition</span>
+            <span class="application-tag">Instant foods</span>
+            <span class="application-tag">Seasonings</span>
+            <span class="application-tag">Sauces</span>
+          </div>
+          <a href="https://www.ncmp.com.eg/contact.html" class="btn btn-food">Learn More</a>
+        </article>
+        
+        <!-- Sorbitol Food Grade -->
+        <article class="food-card">
+          <span class="product-badge food">Food Grade</span>
+          <h3 class="product-title">Sorbitol (Food Grade)</h3>
+          <p class="product-desc">Food-grade sorbitol for confectionery and sugar-free food applications. Provides sweetness with reduced calories.</p>
+          <p class="packaging"><strong>Packaging:</strong> 291kg drums or bulk</p>
+          <div class="applications-list">
+            <span class="application-tag">Sugar-free candy</span>
+            <span class="application-tag">Diet foods</span>
+            <span class="application-tag">Chewing gum</span>
+            <span class="application-tag">Baked goods</span>
+          </div>
+          <a href="https://www.ncmp.com.eg/contact.html" class="btn btn-food">Learn More</a>
+        </article>
+        
+        <!-- Corn Starch Food -->
+        <article class="food-card">
+          <span class="product-badge food">Food Grade</span>
+          <h3 class="product-title">Corn Starch</h3>
+          <p class="product-desc">Premium food-grade corn starch for thickening, binding, and texturizing in food manufacturing.</p>
+          <p class="packaging"><strong>Packaging:</strong> 25kg bags or bulk</p>
+          <div class="applications-list">
+            <span class="application-tag">Sauces</span>
+            <span class="application-tag">Soups</span>
+            <span class="application-tag">Bakery</span>
+            <span class="application-tag">Meat processing</span>
+          </div>
+          <a href="https://www.ncmp.com.eg/contact.html" class="btn btn-food">Learn More</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Footer ============ -->
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <img src="https://www.ncmp.com.eg/images/logo2.gif" alt="NCMP" class="footer-logo">
+            <p class="footer-desc">National Company for Maize Products - Egypt's leading corn processing company since 1981.</p>
+          </div>
+          
+          <div>
+            <h4 class="footer-title">Products</h4>
+            <ul class="footer-links">
+              <li><a href="#pharma">Pharma Grade</a></li>
+              <li><a href="#food">Food Grade</a></li>
+              <li>
+                <a href="https://www.ncmp.com.eg/sorbitol.html">
+                  Sorbitol
+                  <i data-lucide="external-link" style="width:12px;height:12px"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="footer-title">Company</h4>
+            <ul class="footer-links">
+              <li><a href="https://www.ncmp.com.eg/about.html">About Us</a></li>
+              <li><a href="https://www.ncmp.com.eg/quality.html">Quality</a></li>
+              <li><a href="https://www.ncmp.com.eg/certificate.html">Certifications</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="footer-title">Contact</h4>
+            <div class="footer-contact">
+              <div class="footer-contact-item">
+                <i data-lucide="map-pin" class="icon"></i>
+                <span>10th of Ramadan City, Egypt</span>
+              </div>
+              <div class="footer-contact-item">
+                <i data-lucide="phone" class="icon"></i>
+                <a href="tel:+20235396605">+20 2 3539 6605</a>
+              </div>
+              <div class="footer-contact-item">
+                <i data-lucide="mail" class="icon"></i>
+                <a href="mailto:info@ncmp.com.eg">info@ncmp.com.eg</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        © 2025 National Company for Maize Products. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+    
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('open');
+    }
+    
+    // Industry tabs switching
+    function switchIndustry(industry) {
+      const pharmaTab = document.getElementById('tab-pharma');
+      const foodTab = document.getElementById('tab-food');
+      const sectionPharma = document.getElementById('section-pharma');
+      const sectionFood = document.getElementById('section-food');
+      const heroPharma = document.getElementById('hero-pharma');
+      const heroFood = document.getElementById('hero-food');
+      const breadcrumbText = document.getElementById('breadcrumb-text');
+      const complianceBadge = document.getElementById('compliance-badge');
+      
+      if (industry === 'pharma') {
+        pharmaTab.classList.add('active');
+        foodTab.classList.remove('active');
+        sectionPharma.classList.remove('hidden');
+        sectionFood.classList.add('hidden');
+        heroPharma.classList.remove('hidden');
+        heroFood.classList.add('hidden');
+        breadcrumbText.textContent = 'Pharma & Nutraceuticals';
+        complianceBadge.style.display = 'flex';
+      } else {
+        pharmaTab.classList.remove('active');
+        foodTab.classList.add('active');
+        sectionPharma.classList.add('hidden');
+        sectionFood.classList.remove('hidden');
+        heroPharma.classList.add('hidden');
+        heroFood.classList.remove('hidden');
+        breadcrumbText.textContent = 'Food & Nutrition';
+        complianceBadge.style.display = 'none';
+      }
+    }
+    
+    // Toggle specifications
+    function toggleSpecs(product) {
+      const specs = document.getElementById(product + '-specs');
+      const btnText = document.getElementById(product + '-btn-text');
+      
+      if (specs.classList.contains('open')) {
+        specs.classList.remove('open');
+        btnText.textContent = 'View Technical Specifications';
+      } else {
+        specs.classList.add('open');
+        btnText.textContent = 'Hide Specifications';
+      }
+      
+      // Re-initialize icons after DOM change
+      lucide.createIcons();
+    }
+    
+    // Show Sorbitol specs by default
+    document.addEventListener('DOMContentLoaded', function() {
+      toggleSpecs('sorbitol');
+    });
+  </script>
+</body>
+</html>
