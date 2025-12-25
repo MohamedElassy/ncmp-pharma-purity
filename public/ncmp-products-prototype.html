@@ -1045,6 +1045,346 @@
     }
 
     /* ============================================
+       STATISTICS SECTION
+    ============================================ */
+    .stats-section {
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+      color: white;
+      padding: 48px 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    @media (min-width: 768px) {
+      .stats-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--corn-gold-light);
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: rgba(255,255,255,0.9);
+    }
+
+    /* ============================================
+       CLIENT SUCCESS / TESTIMONIALS SECTION
+    ============================================ */
+    .testimonials-section {
+      background: var(--muted);
+      padding: 64px 0;
+    }
+
+    .testimonials-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+
+    .testimonials-subtitle {
+      text-align: center;
+      color: var(--muted-foreground);
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 768px) {
+      .testimonials-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .testimonial-card {
+      background: white;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border-top: 4px solid var(--pharma-blue);
+    }
+
+    .testimonial-quote {
+      font-size: 14px;
+      font-style: italic;
+      color: var(--foreground);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-quote::before {
+      content: '"';
+      font-size: 2rem;
+      color: var(--pharma-blue);
+      line-height: 0;
+      margin-right: 4px;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testimonial-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--pharma-blue));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .testimonial-info h5 {
+      font-weight: 600;
+      color: var(--foreground);
+      margin-bottom: 2px;
+    }
+
+    .testimonial-info p {
+      font-size: 12px;
+      color: var(--muted-foreground);
+    }
+
+    /* ============================================
+       INDUSTRY INSIGHTS SECTION
+    ============================================ */
+    .insights-section {
+      background: var(--background);
+      padding: 64px 0;
+    }
+
+    .insights-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+
+    .insights-subtitle {
+      text-align: center;
+      color: var(--muted-foreground);
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    .insights-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 768px) {
+      .insights-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .insight-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .insight-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+
+    .insight-image {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      background: var(--muted);
+    }
+
+    .insight-content {
+      padding: 20px;
+    }
+
+    .insight-category {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--pharma-blue);
+      margin-bottom: 8px;
+    }
+
+    .insight-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--foreground);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .insight-excerpt {
+      font-size: 13px;
+      color: var(--muted-foreground);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .insight-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .insight-link:hover {
+      text-decoration: underline;
+    }
+
+    /* ============================================
+       LEAD GENERATION FORM SECTION
+    ============================================ */
+    .lead-form-section {
+      background: linear-gradient(135deg, hsl(200, 50%, 97%) 0%, hsl(148, 40%, 97%) 100%);
+      padding: 64px 0;
+    }
+
+    .lead-form-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .lead-form-container { grid-template-columns: 1fr 1fr; }
+    }
+
+    .lead-form-text h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+
+    .lead-form-text p {
+      color: var(--muted-foreground);
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+
+    .lead-benefits {
+      list-style: none;
+    }
+
+    .lead-benefits li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: var(--foreground);
+    }
+
+    .lead-benefits li svg {
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .lead-form-box {
+      background: white;
+      padding: 32px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    .lead-form-box h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--foreground);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--foreground);
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--background);
+      color: var(--foreground);
+      font-family: inherit;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px hsla(148, 70%, 32%, 0.15);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: linear-gradient(135deg, var(--primary), var(--pharma-blue));
+      color: white;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 102, 51, 0.25);
+    }
+
+    /* ============================================
        CTA SECTION
     ============================================ */
     .cta-section {
@@ -1122,6 +1462,40 @@
     .btn-cta-secondary:hover {
       background: white;
       color: var(--primary);
+    }
+
+    /* ============================================
+       SOCIAL MEDIA LINKS
+    ============================================ */
+    .social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .social-link {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .social-link:hover {
+      background: var(--corn-gold-light);
+    }
+
+    .social-link svg {
+      width: 18px;
+      height: 18px;
+      color: white;
+    }
+
+    .social-link:hover svg {
+      color: var(--secondary);
     }
 
     /* Footer */
@@ -1997,6 +2371,218 @@
     </div>
   </section>
 
+  <!-- Statistics Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">40+</div>
+          <div class="stat-label">Years of Manufacturing Excellence</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">25+</div>
+          <div class="stat-label">Countries Served Globally</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">99.9%</div>
+          <div class="stat-label">Quality Assurance Rate</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">6</div>
+          <div class="stat-label">International Certifications</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Success Stories Section -->
+  <section class="testimonials-section">
+    <div class="container">
+      <h2>Trusted by Industry Leaders</h2>
+      <p class="testimonials-subtitle">
+        Pharmaceutical and nutraceutical companies across the MENA region rely on NCMP for consistent quality and reliable supply.
+      </p>
+      
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            The consistency and quality of NCMP's pharmaceutical sorbitol has significantly improved our tablet formulation process. Their technical support team is exceptional.
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">AH</div>
+            <div class="testimonial-info">
+              <h5>Ahmed Hassan</h5>
+              <p>R&D Director, Leading Egyptian Pharma</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            Switching to NCMP's pharma-grade citric acid reduced our quality control rejections by 35%. The documentation and traceability are world-class.
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">SM</div>
+            <div class="testimonial-info">
+              <h5>Sarah Mahmoud</h5>
+              <p>QA Manager, Multinational Nutraceuticals</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <p class="testimonial-quote">
+            NCMP has been our reliable partner for corn starch supply. Their GMP compliance and competitive pricing make them our preferred supplier.
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">MK</div>
+            <div class="testimonial-info">
+              <h5>Mohamed Khalil</h5>
+              <p>Procurement Head, Regional Distributor</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industry Insights Section -->
+  <section class="insights-section">
+    <div class="container">
+      <h2>Industry Insights & Resources</h2>
+      <p class="insights-subtitle">
+        Stay informed with the latest trends, technical guides, and best practices in pharmaceutical excipients.
+      </p>
+      
+      <div class="insights-grid">
+        <article class="insight-card">
+          <img src="https://images.pexels.com/photos/3825573/pexels-photo-3825573.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Sugar-Free Trend" class="insight-image">
+          <div class="insight-content">
+            <span class="insight-category">Market Trends</span>
+            <h3 class="insight-title">Rising Demand for Sugar-Free Pharmaceutical Formulations</h3>
+            <p class="insight-excerpt">Explore how polyols like sorbitol and maltitol are transforming patient-friendly medication design.</p>
+            <a href="#" class="insight-link">
+              Read More
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+        
+        <article class="insight-card">
+          <img src="https://images.pexels.com/photos/3683074/pexels-photo-3683074.jpeg?auto=compress&cs=tinysrgb&w=400" alt="GMP Standards" class="insight-image">
+          <div class="insight-content">
+            <span class="insight-category">Technical Guide</span>
+            <h3 class="insight-title">Understanding GMP Standards for Pharmaceutical Excipients</h3>
+            <p class="insight-excerpt">A comprehensive guide to Good Manufacturing Practice requirements for excipient suppliers.</p>
+            <a href="#" class="insight-link">
+              Read More
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+        
+        <article class="insight-card">
+          <img src="https://images.pexels.com/photos/4021769/pexels-photo-4021769.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Starch Applications" class="insight-image">
+          <div class="insight-content">
+            <span class="insight-category">Application Note</span>
+            <h3 class="insight-title">Corn Starch in Tablet Disintegration: Best Practices</h3>
+            <p class="insight-excerpt">Optimize your tablet formulations with proper starch selection and processing techniques.</p>
+            <a href="#" class="insight-link">
+              Read More
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lead Generation Form Section -->
+  <section class="lead-form-section" id="quote">
+    <div class="container">
+      <div class="lead-form-container">
+        <div class="lead-form-text">
+          <h2>Request a Quote or Sample</h2>
+          <p>
+            Get personalized pricing, technical documentation, or request a sample to evaluate our pharmaceutical-grade ingredients for your formulations.
+          </p>
+          <ul class="lead-benefits">
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              Free samples for qualified pharmaceutical companies
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              Complete technical documentation & certificates
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              Dedicated technical support team
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              Response within 24 business hours
+            </li>
+          </ul>
+        </div>
+        
+        <div class="lead-form-box">
+          <h3>Get Started Today</h3>
+          <form onsubmit="handleFormSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" required>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Business Email *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="company">Company Name *</label>
+              <input type="text" id="company" name="company" required>
+            </div>
+            <div class="form-group">
+              <label for="product">Product Interest</label>
+              <select id="product" name="product">
+                <option value="">Select a product</option>
+                <option value="sorbitol">Pharmaceutical Sorbitol</option>
+                <option value="citric">Citric Acid (Pharma Grade)</option>
+                <option value="maltitol">Maltitol</option>
+                <option value="cornstarch">Corn Starch (Medical Grade)</option>
+                <option value="multiple">Multiple Products</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message (Optional)</label>
+              <textarea id="message" name="message" rows="3" placeholder="Tell us about your requirements..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Submit Request</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA Section -->
   <section class="cta-section" id="contact">
     <div class="container">
@@ -2006,7 +2592,7 @@
         Contact our dedicated pharma team for technical support, samples, or detailed documentation.
       </p>
       <div class="cta-buttons">
-        <a href="https://www.ncmp.com.eg/contact.html" class="btn-cta-primary">Request a Sample</a>
+        <a href="#quote" class="btn-cta-primary">Request a Quote</a>
         <a href="https://www.ncmp.com.eg/contact.html" class="btn-cta-secondary">Schedule Consultation</a>
       </div>
     </div>
@@ -2023,6 +2609,29 @@
               NCMP's strategic division dedicated to pharmaceutical-grade ingredients. 
               Leveraging 40+ years of manufacturing expertise for pharmaceutical excellence.
             </p>
+            <!-- Social Media Links -->
+            <div class="social-links">
+              <a href="https://www.linkedin.com/company/ncmp-egypt" class="social-link" title="LinkedIn" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </a>
+              <a href="https://www.facebook.com/ncmpegypt" class="social-link" title="Facebook" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+              <a href="https://twitter.com/ncmpegypt" class="social-link" title="X (Twitter)" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
+              <a href="https://www.youtube.com/@ncmpegypt" class="social-link" title="YouTube" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+              </a>
+            </div>
           </div>
           
           <div>
@@ -2134,6 +2743,42 @@
         }
       });
     });
+
+    // Handle form submission
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      const formData = new FormData(form);
+      
+      // Show success message
+      const submitBtn = form.querySelector('.btn-submit');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+      
+      // Simulate form submission (replace with actual endpoint in production)
+      setTimeout(() => {
+        submitBtn.textContent = '✓ Request Submitted!';
+        submitBtn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+        
+        // Reset form after delay
+        setTimeout(() => {
+          form.reset();
+          submitBtn.textContent = originalText;
+          submitBtn.style.background = '';
+          submitBtn.disabled = false;
+          
+          // Show thank you alert
+          alert('Thank you for your interest in NCMP Pharma Grade! Our team will contact you within 24 business hours.');
+        }, 2000);
+      }, 1500);
+    }
+
+    // Newsletter subscription (if needed)
+    function subscribeNewsletter(email) {
+      console.log('Newsletter subscription:', email);
+      alert('Thank you for subscribing to NCMP industry insights!');
+    }
   </script>
 </body>
 </html>
