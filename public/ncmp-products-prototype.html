@@ -68,6 +68,11 @@
       color: var(--secondary-foreground);
       font-size: 12px;
       padding: 8px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 60;
     }
 
     .top-bar .container {
@@ -106,7 +111,7 @@
     /* Main Navigation */
     .main-nav {
       position: fixed;
-      top: 28px;
+      top: 32px;
       left: 0;
       right: 0;
       z-index: 50;
@@ -123,7 +128,7 @@
     }
 
     @media (min-width: 1024px) {
-      .main-nav .container { height: 80px; }
+      .main-nav .container { height: 72px; }
     }
 
     .logo img {
@@ -159,7 +164,7 @@
     /* Industry Tabs Bar */
     .industry-tabs-bar {
       position: fixed;
-      top: 100px;
+      top: 96px;
       left: 0;
       right: 0;
       z-index: 40;
@@ -169,7 +174,7 @@
     }
 
     @media (min-width: 1024px) {
-      .industry-tabs-bar { top: 108px; }
+      .industry-tabs-bar { top: 104px; }
     }
 
     .industry-tabs {
@@ -239,11 +244,11 @@
     /* Hero Section */
     .hero {
       position: relative;
-      padding-top: 148px;
+      padding-top: 144px;
     }
 
     @media (min-width: 1024px) {
-      .hero { padding-top: 156px; }
+      .hero { padding-top: 152px; }
     }
 
     .hero-banner {
