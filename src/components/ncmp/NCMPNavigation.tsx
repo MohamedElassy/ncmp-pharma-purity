@@ -27,6 +27,7 @@ interface IndustryTab {
 const industryTabs: IndustryTab[] = [
   { id: "pharma", label: "Pharma & Nutraceuticals", labelAr: "الأدوية والمكملات", isNew: true, color: "pharma-tab" },
   { id: "food", label: "Food & Nutrition", labelAr: "الغذاء والتغذية", color: "food-tab" },
+  { id: "sustainability", label: "Sustainability", labelAr: "الاستدامة", color: "sustainability-tab" },
 ];
 
 interface NCMPNavigationProps {

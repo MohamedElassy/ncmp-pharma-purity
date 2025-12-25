@@ -193,6 +193,15 @@
     background: hsl(280 50% 97%);
   }
 
+  .industry-tab.sustainability-tab {
+    color: hsl(148 70% 32%);
+    border-bottom-color: hsl(148 70% 32%);
+  }
+
+  .industry-tab.sustainability-tab.active {
+    background: hsl(145 50% 97%);
+  }
+
   /* NCMP Green Stripe - Iconic Element */
   .ncmp-stripe {
     @apply h-1;
