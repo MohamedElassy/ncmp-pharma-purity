@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'display': ['"Playfair Display"', 'Georgia', 'serif'],
+        'body': ['"Source Sans 3"', 'system-ui', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,33 +61,91 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Extended NCMP Pharma Palette
+        ncmp: {
+          green: {
+            DEFAULT: "hsl(var(--primary))",
+            dark: "hsl(var(--ncmp-green-dark))",
+            light: "hsl(var(--ncmp-green-light))",
+          },
+          gold: {
+            DEFAULT: "hsl(var(--corn-gold))",
+            light: "hsl(var(--corn-gold-light))",
+            dark: "hsl(var(--corn-gold-dark))",
+          },
+          pharma: {
+            white: "hsl(var(--pharma-white))",
+            blue: "hsl(var(--pharma-blue))",
+            accent: "hsl(var(--pharma-blue-accent))",
+          },
+          clinical: "hsl(var(--clinical-gray))",
+          teal: "hsl(var(--science-teal))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        xl: "calc(var(--radius) + 4px)",
+        "2xl": "calc(var(--radius) + 8px)",
+        "3xl": "calc(var(--radius) + 16px)",
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "fade-up": {
+          from: { opacity: "0", transform: "translateY(30px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        "fade-in": {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+        "scale-in": {
+          from: { opacity: "0", transform: "scale(0.95)" },
+          to: { opacity: "1", transform: "scale(1)" },
+        },
+        "slide-in-right": {
+          from: { opacity: "0", transform: "translateX(30px)" },
+          to: { opacity: "1", transform: "translateX(0)" },
+        },
+        "pulse-subtle": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.85" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-up": "fade-up 0.6s ease-out forwards",
+        "fade-in": "fade-in 0.6s ease-out forwards",
+        "scale-in": "scale-in 0.5s ease-out forwards",
+        "slide-in-right": "slide-in-right 0.6s ease-out forwards",
+        "pulse-subtle": "pulse-subtle 2s ease-in-out infinite",
+        float: "float 3s ease-in-out infinite",
+      },
+      backgroundImage: {
+        "gradient-hero": "linear-gradient(135deg, hsl(145 65% 28% / 0.95) 0%, hsl(145 70% 22%) 100%)",
+        "gradient-gold": "linear-gradient(135deg, hsl(42 90% 55%) 0%, hsl(38 85% 42%) 100%)",
+        "gradient-pharma": "linear-gradient(180deg, hsl(200 30% 99%) 0%, hsl(200 45% 94%) 100%)",
+        "gradient-radial": "radial-gradient(ellipse at center, var(--tw-gradient-stops))",
+      },
+      boxShadow: {
+        soft: "0 4px 20px -4px hsl(145 30% 20% / 0.08)",
+        card: "0 8px 30px -8px hsl(145 30% 20% / 0.12)",
+        elevated: "0 20px 50px -12px hsl(145 30% 20% / 0.18)",
+        "glow-gold": "0 0 40px hsl(42 90% 55% / 0.25)",
+        "glow-green": "0 0 40px hsl(145 65% 28% / 0.2)",
       },
     },
   },

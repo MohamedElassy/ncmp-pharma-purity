@@ -2,95 +2,126 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* NCMP Pharma Grade Design System
+   Based on NCMP brand identity with enhanced pharmaceutical purity aesthetic
+   Colors inspired by: corn gold, scientific green, pharmaceutical white/blue
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
+    /* Core Brand Colors - NCMP Green Identity */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 150 30% 15%;
 
+    /* Cards & Surfaces */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 150 30% 15%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 150 30% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary: NCMP Green (from logo) */
+    --primary: 145 65% 28%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary: Pharmaceutical Blue-White */
+    --secondary: 200 25% 96%;
+    --secondary-foreground: 150 30% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted: Soft clinical gray */
+    --muted: 180 10% 96%;
+    --muted-foreground: 150 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent: Corn Gold (national identity) */
+    --accent: 42 90% 55%;
+    --accent-foreground: 150 30% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Status Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Borders */
+    --border: 145 20% 88%;
+    --input: 145 20% 88%;
+    --ring: 145 65% 28%;
 
-    --radius: 0.5rem;
+    --radius: 0.625rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Extended Pharma Palette */
+    --ncmp-green-dark: 145 70% 22%;
+    --ncmp-green-light: 145 45% 45%;
+    --corn-gold: 42 90% 55%;
+    --corn-gold-light: 44 95% 72%;
+    --corn-gold-dark: 38 85% 42%;
+    --pharma-white: 200 30% 99%;
+    --pharma-blue: 200 45% 94%;
+    --pharma-blue-accent: 195 70% 45%;
+    --clinical-gray: 180 10% 94%;
+    --science-teal: 175 50% 35%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Gradients as custom properties */
+    --gradient-hero: linear-gradient(135deg, hsl(145 65% 28% / 0.95) 0%, hsl(145 70% 22%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(42 90% 55%) 0%, hsl(38 85% 42%) 100%);
+    --gradient-pharma: linear-gradient(180deg, hsl(200 30% 99%) 0%, hsl(200 45% 94%) 100%);
+    --gradient-clinical: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(180 10% 96%) 100%);
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(145 30% 20% / 0.08);
+    --shadow-card: 0 8px 30px -8px hsl(145 30% 20% / 0.12);
+    --shadow-elevated: 0 20px 50px -12px hsl(145 30% 20% / 0.18);
+    --shadow-glow-gold: 0 0 40px hsl(42 90% 55% / 0.25);
+    --shadow-glow-green: 0 0 40px hsl(145 65% 28% / 0.2);
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar */
+    --sidebar-background: 145 20% 98%;
+    --sidebar-foreground: 150 30% 20%;
+    --sidebar-primary: 145 65% 28%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 145 15% 94%;
+    --sidebar-accent-foreground: 150 30% 20%;
+    --sidebar-border: 145 20% 90%;
+    --sidebar-ring: 145 65% 40%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 150 30% 8%;
+    --foreground: 0 0% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 150 25% 12%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 150 25% 12%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 145 55% 45%;
+    --primary-foreground: 150 30% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 150 20% 18%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 150 20% 18%;
+    --muted-foreground: 150 15% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 42 80% 50%;
+    --accent-foreground: 150 30% 8%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --border: 150 20% 22%;
+    --input: 150 20% 22%;
+    --ring: 145 55% 45%;
+
+    --sidebar-background: 150 30% 10%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 145 55% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 150 20% 16%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 150 20% 18%;
+    --sidebar-ring: 145 55% 50%;
   }
 }
 
@@ -99,7 +130,244 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Source Sans 3', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+@layer components {
+  /* Premium Button Variants */
+  .btn-pharma {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 font-semibold transition-all duration-300;
+    @apply bg-primary text-primary-foreground rounded-lg;
+    @apply hover:shadow-elevated hover:-translate-y-0.5;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+
+  .btn-pharma-outline {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 font-semibold transition-all duration-300;
+    @apply bg-transparent text-primary border-2 border-primary rounded-lg;
+    @apply hover:bg-primary hover:text-primary-foreground;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 font-semibold transition-all duration-300;
+    @apply bg-accent text-foreground rounded-lg;
+    @apply hover:shadow-lg hover:-translate-y-0.5;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+
+  /* Card Styles */
+  .card-pharma {
+    @apply bg-card rounded-xl p-6 transition-all duration-300;
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-pharma:hover {
+    box-shadow: var(--shadow-elevated);
+    transform: translateY(-4px);
+  }
+
+  .card-product {
+    @apply bg-card rounded-2xl overflow-hidden transition-all duration-500;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .card-product:hover {
+    box-shadow: var(--shadow-elevated);
+    transform: translateY(-8px);
+  }
+
+  /* Section Layouts */
+  .section-pharma {
+    @apply py-20 lg:py-28;
+  }
+
+  .container-pharma {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Typography */
+  .heading-hero {
+    @apply text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .heading-section {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .heading-card {
+    @apply text-xl sm:text-2xl font-semibold;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .text-body {
+    @apply text-base sm:text-lg leading-relaxed;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+
+  .text-label {
+    @apply text-sm font-semibold uppercase tracking-wider;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+
+  /* Badge Styles */
+  .badge-pharma {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full;
+    @apply bg-primary/10 text-primary;
+  }
+
+  .badge-gold {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-full;
+    @apply bg-accent/20 text-foreground;
+  }
+
+  /* Dividers */
+  .divider-gold {
+    @apply w-20 h-1 rounded-full;
+    background: var(--gradient-gold);
+  }
+
+  /* Animations */
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Staggered animations */
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+
+  /* Hero overlay */
+  .hero-overlay {
+    background: linear-gradient(135deg, 
+      hsl(145 65% 25% / 0.92) 0%, 
+      hsl(145 70% 18% / 0.95) 50%,
+      hsl(150 30% 15% / 0.9) 100%
+    );
+  }
+
+  /* Glassmorphism */
+  .glass-card {
+    @apply backdrop-blur-md rounded-2xl border;
+    background: hsl(0 0% 100% / 0.1);
+    border-color: hsl(0 0% 100% / 0.2);
+  }
+
+  /* Grid patterns */
+  .grid-pattern {
+    background-image: 
+      linear-gradient(hsl(145 65% 28% / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(145 65% 28% / 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Scroll indicator */
+  .scroll-indicator {
+    @apply animate-bounce;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(42 90% 55%) 0%, hsl(38 85% 42%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-green {
+    background: linear-gradient(135deg, hsl(145 65% 35%) 0%, hsl(145 70% 25%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  .bg-gradient-pharma {
+    background: var(--gradient-pharma);
+  }
+
+  .bg-gradient-clinical {
+    background: var(--gradient-clinical);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .shadow-glow-gold {
+    box-shadow: var(--shadow-glow-gold);
+  }
+
+  .shadow-glow-green {
+    box-shadow: var(--shadow-glow-green);
   }
 }
