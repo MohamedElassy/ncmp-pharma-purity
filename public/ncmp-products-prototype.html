@@ -25,7 +25,7 @@
   <style>
     /* ============================================
        NCMP Design System - Standalone HTML Version
-       Based on the React prototype
+       Based on the React prototype with Roquette-style design
        ============================================ */
     
     :root {
@@ -1020,7 +1020,8 @@
   <!-- ============ Hero Section ============ -->
   <header class="hero">
     <div class="hero-banner">
-      <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1920&q=80" alt="NCMP Pharmaceutical Manufacturing">
+      <!-- Professional pharmaceutical manufacturing facility image -->
+      <img src="https://images.unsplash.com/photo-1563213126-a4273aed2016?w=1920&q=80" alt="NCMP Pharmaceutical Manufacturing Facility" id="hero-img">
       <div class="hero-overlay"></div>
       
       <div class="hero-content">
@@ -1118,18 +1119,19 @@
         <p class="section-subtitle">Pharmaceutical-grade ingredients meeting USP, BP, and EP standards for the pharmaceutical industry.</p>
       </div>
       
-      <!-- Sorbitol -->
+      <!-- Sorbitol - Liquid Product -->
       <article class="product-card">
         <div class="product-grid">
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80" alt="Pharmaceutical Sorbitol - NCMP">
+            <!-- Clear liquid sorbitol in pharmaceutical bottle - Roquette style -->
+            <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&q=80" alt="Pharmaceutical Sorbitol Liquid - NCMP - Clear colorless syrup">
             <span class="grade-badge">USP/NF/EP</span>
           </div>
           <div class="product-content">
             <span class="product-badge pharma">Pharma Grade</span>
             <h3 class="product-title">Sorbitol</h3>
-            <p class="product-subtitle">Pharmaceutical Grade - D-Glucitol</p>
-            <p class="product-desc">Sorbitol is a versatile product with wide pharmaceutical and medical applications. Used in cough syrups, laxatives, and pharmaceutical formulations. NCMP Sorbitol meets USP/NF and EP standards for pharmaceutical use.</p>
+            <p class="product-subtitle">Pharmaceutical Grade - D-Glucitol (Liquid 70%)</p>
+            <p class="product-desc">Sorbitol is a versatile product with wide pharmaceutical and medical applications. Used in cough syrups, laxatives, and pharmaceutical formulations. NCMP Sorbitol meets USP/NF and EP standards for pharmaceutical use. Clear, colorless syrup with sweet taste.</p>
             
             <div class="product-meta">
               <div>
@@ -1230,7 +1232,7 @@
       <article class="product-card">
         <div class="product-grid">
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600&q=80" alt="Citric Acid Pharmaceutical Grade - NCMP">
+            <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600&q=80" alt="Citric Acid Pharmaceutical Grade - NCMP - White crystalline powder">
             <span class="grade-badge">BP/USP/EP</span>
           </div>
           <div class="product-content">
@@ -1315,7 +1317,7 @@
       <article class="product-card">
         <div class="product-grid">
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&q=80" alt="Maltitol Pharmaceutical Grade - NCMP">
+            <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&q=80" alt="Maltitol Pharmaceutical Grade - NCMP - White crystalline powder">
             <span class="grade-badge">EP/USP-NF</span>
           </div>
           <div class="product-content">
@@ -1389,7 +1391,7 @@
       <article class="product-card">
         <div class="product-grid">
           <div class="product-image">
-            <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&q=80" alt="Pharmaceutical Corn Starch - NCMP">
+            <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&q=80" alt="Pharmaceutical Corn Starch - NCMP - Fine white powder">
             <span class="grade-badge">USP/NF/BP</span>
           </div>
           <div class="product-content">
@@ -1654,6 +1656,7 @@
       const heroFood = document.getElementById('hero-food');
       const breadcrumbText = document.getElementById('breadcrumb-text');
       const complianceBadge = document.getElementById('compliance-badge');
+      const heroImg = document.getElementById('hero-img');
       
       if (industry === 'pharma') {
         pharmaTab.classList.add('active');
@@ -1664,6 +1667,7 @@
         heroFood.classList.add('hidden');
         breadcrumbText.textContent = 'Pharma & Nutraceuticals';
         complianceBadge.style.display = 'flex';
+        heroImg.src = 'https://images.unsplash.com/photo-1563213126-a4273aed2016?w=1920&q=80';
       } else {
         pharmaTab.classList.remove('active');
         foodTab.classList.add('active');
@@ -1673,6 +1677,7 @@
         heroFood.classList.remove('hidden');
         breadcrumbText.textContent = 'Food & Nutrition';
         complianceBadge.style.display = 'none';
+        heroImg.src = 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80';
       }
     }
     
