@@ -133,7 +133,7 @@
 }
 
 @layer components {
-  /* NCMP Navigation Bar - Matching Original */
+  /* NCMP Navigation Bar - Roquette-inspired design */
   .ncmp-nav {
     @apply bg-card border-b border-border;
   }
@@ -143,15 +143,62 @@
     font-family: 'Open Sans', sans-serif;
   }
 
+  /* Roquette-style Industry Tabs */
+  .industry-tabs {
+    @apply flex items-center;
+    background: hsl(var(--background));
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  .industry-tab {
+    @apply relative px-6 py-4 font-semibold text-sm transition-all duration-200;
+    font-family: 'Open Sans', sans-serif;
+    border-bottom: 3px solid transparent;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .industry-tab:hover {
+    color: hsl(var(--foreground));
+    background: hsl(var(--muted));
+  }
+
+  .industry-tab.active {
+    border-bottom-color: currentColor;
+  }
+
+  .industry-tab.pharma-tab {
+    color: hsl(200 60% 50%);
+    border-bottom-color: hsl(200 60% 50%);
+  }
+
+  .industry-tab.pharma-tab.active {
+    background: hsl(200 50% 97%);
+  }
+
+  .industry-tab.food-tab {
+    color: hsl(25 95% 53%);
+    border-bottom-color: hsl(25 95% 53%);
+  }
+
+  .industry-tab.food-tab.active {
+    background: hsl(30 90% 97%);
+  }
+
+  .industry-tab.biopharma-tab {
+    color: hsl(280 60% 50%);
+    border-bottom-color: hsl(280 60% 50%);
+  }
+
+  .industry-tab.biopharma-tab.active {
+    background: hsl(280 50% 97%);
+  }
+
   /* NCMP Green Stripe - Iconic Element */
   .ncmp-stripe {
-    @apply h-6;
+    @apply h-1;
     background: linear-gradient(90deg, 
       hsl(148 70% 32%) 0%,
-      hsl(148 70% 32%) 33.33%,
-      hsl(150 100% 20%) 33.33%,
-      hsl(150 100% 20%) 66.66%,
-      hsl(148 70% 32%) 66.66%,
+      hsl(150 100% 20%) 50%,
       hsl(148 70% 32%) 100%
     );
   }
@@ -276,6 +323,22 @@
     @apply bg-primary text-primary-foreground;
   }
 
+  .badge-new {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 text-xs font-bold rounded-full uppercase;
+    background: linear-gradient(135deg, hsl(200 60% 50%) 0%, hsl(280 60% 50%) 100%);
+    color: white;
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 5px hsl(200 60% 50% / 0.5);
+    }
+    50% {
+      box-shadow: 0 0 15px hsl(200 60% 50% / 0.8);
+    }
+  }
+
   /* Spec Table Header Colors */
   .spec-header-physical {
     background: hsl(148 70% 32%);
@@ -308,9 +371,56 @@
     @apply py-12 lg:py-16;
   }
 
+  /* Hero Banner - Roquette Style */
+  .hero-banner {
+    @apply relative overflow-hidden;
+    min-height: 400px;
+  }
+
+  .hero-banner-overlay {
+    background: linear-gradient(135deg, 
+      hsla(150, 100%, 20%, 0.85) 0%,
+      hsla(148, 70%, 32%, 0.7) 50%,
+      transparent 100%
+    );
+  }
+
+  /* News Cards - Roquette Style */
+  .news-card {
+    @apply bg-card border-l-4 p-4 transition-all duration-200;
+    border-left-color: hsl(148 70% 32%);
+  }
+
+  .news-card:hover {
+    @apply bg-muted;
+  }
+
+  /* Industry Highlight Box */
+  .industry-highlight {
+    @apply relative p-6 rounded-lg overflow-hidden;
+  }
+
+  .industry-highlight.pharma {
+    background: linear-gradient(135deg, hsl(200 50% 97%) 0%, hsl(200 40% 93%) 100%);
+    border: 1px solid hsl(200 50% 90%);
+  }
+
+  .industry-highlight.food {
+    background: linear-gradient(135deg, hsl(30 80% 97%) 0%, hsl(30 70% 93%) 100%);
+    border: 1px solid hsl(30 80% 90%);
+  }
+
   /* Animations */
   .animate-fade-up {
     animation: fadeUp 0.5s ease-out forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.6s ease-out forwards;
   }
 
   @keyframes fadeUp {
@@ -321,6 +431,28 @@
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
     }
   }
 }
