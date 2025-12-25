@@ -202,6 +202,16 @@
     background: hsl(145 50% 97%);
   }
 
+  /* Sustainability Nav Link in Top Bar */
+  .sustainability-nav-link {
+    color: hsl(148 70% 32%) !important;
+    font-weight: 600;
+  }
+
+  .sustainability-nav-link:hover {
+    color: hsl(150 100% 20%) !important;
+  }
+
   /* NCMP Green Stripe - Iconic Element */
   .ncmp-stripe {
     @apply h-1;
